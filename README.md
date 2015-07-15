@@ -1,2 +1,2 @@
 # research
-my open research work
+my open research work on ld-r
