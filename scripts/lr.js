@@ -55,7 +55,7 @@ var LR = {
             LR.U.showViews(dInfo);
             LR.U.showPrint(dInfo);
             LR.U.showEmbedData(dInfo);
-            LR.U.showStorage(dInfo);
+//            LR.U.showStorage(dInfo);
             LR.U.showExports(dInfo);
             LR.U.showDocumentMetadata(dInfo);
             if(!body.hasClass("on-slideshow")) {
@@ -81,7 +81,7 @@ var LR = {
 
             $('#toc').remove();
             $('#embed-data-entry').remove();
-            LR.U.hideStorage();
+//            LR.U.hideStorage();
         },
 
         getDocRefType: function() {
@@ -394,7 +394,7 @@ var LR = {
             var tableList = [];
 
             if (listType) { tableList = [listType]; }
-            else { tableList = ['content', 'figure', 'table']; }
+            else { tableList = ['content', 'figure', 'table', 'abbr']; }
 
             tableList.forEach(function(element) {
                 var e = $(element);
@@ -408,28 +408,64 @@ var LR = {
                             titleType = 'caption';
                             tableHeading = 'Table of Tables';
                             break;
+                        case 'abbr':
+                            titleType = 'title';
+                            tableHeading = 'Table of Abbreviations';
+                            break;
                         case 'content': default:
                             titleType = '';
                             tableHeading = 'Table of Contents';
                             break;
                     }
 
-                    s += '<nav id="table-of-'+ element +'s">';
-                    s += '<h2>' + tableHeading + '</h2>';
-                    s += '<div><ol class="toc">';
+                    if (element == 'abbr') {
+                        s += '<section id="table-of-abbreviations">';
+                        s += '<h2>' + tableHeading + '</h2>';
+                        s += '<div><dl class="toc">';
+                    }
+                    else {
+                        s += '<nav id="table-of-'+ element +'s">';
+                        s += '<h2>' + tableHeading + '</h2>';
+                        s += '<div><ol class="toc">';
+                    }
+
                     if (element == 'content') {
                         s += LR.U.getListOfSections($('h1 ~ div section:not([class~="slide"])'), false);
                     }
                     else {
-                        e.each(function(i,v) {
-                            elementId = $(this).attr('id');
-                            elementTitle = $(this).find(titleType).text();
+                        if (element == 'abbr') {
+                            if (e.length > 0) {
+                                e.sort(function(a, b) {
+                                    var textA = $(a).text();
+                                    var textB = $(b).text();
+                                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                                });
+                            }
 
-                            s += '<li><a href="#' + elementId +'">' + elementTitle  +'</a></li>';
-                        });
+                            e.each(function() {
+                                var title = $(this).attr(titleType);
+                                var text = $(this).text();
+                                s += '<dt>' + text + '</dt>';
+                                s += '<dd>' + title + '</dd>';
+                            });
+                        }
+                        else {
+                            e.each(function(i,v) {
+                                elementId = $(this).attr('id');
+                                elementTitle = $(this).find(titleType).text();
+
+                                s += '<li><a href="#' + elementId +'">' + elementTitle  +'</a></li>';
+                            });
+                        }
                     }
-                    s += '</ol></div>';
-                    s += '</nav>';
+
+                    if (element == 'abbr'){
+                        s += '</dl></div>';
+                        s += '</section>';
+                    } else {
+                        s += '</ol></div>';
+                        s += '</nav>';
+                    }
                 }
             });
 
@@ -490,17 +526,21 @@ var LR = {
         showFragment: function() {
             $(document).on({
                 mouseenter: function () {
-                    if($('#'+this.id+' > .lr.fragment').length == 0){
-                        $('#'+this.id).append('<span class="lr fragment" style="height:' + this.clientHeight + 'px; "><a href="#' + this.id + '">' + '#' + this.id + '</a></span>');
+                    if($('#'+this.id+' > .lr.fragment').length == 0 && this.parentNode.nodeName.toLowerCase() != 'aside'){
+                        $('#'+this.id).prepend('<span class="lr fragment" style="height:' + this.clientHeight + 'px; "><a href="#' + this.id + '">' + '#' + this.id + '</a></span>');
                         var fragment = $('#'+this.id+' > .lr.fragment');
                         var fragmentClientWidth = fragment.get(0).clientWidth;
-                        fragment.css({'right': '-' + (fragmentClientWidth - 2) + 'px'});
+                        fragment.css({
+                            'top': 'calc(' + Math.ceil($(this).position().top) + 'px)',
+                            'right': '-' + (fragmentClientWidth - 2) + 'px'
+                        });
                     }
                 },
                 mouseleave: function () {
                     $('#'+this.id+' > .lr.fragment').remove();
+                    $('#'+this.id).removeClass('lr position-relative').filter('[class=""]').removeAttr('class');
                 }
-            }, '#content *[id]');
+            }, '#content *[id], #interactions *[id]');
         },
 
         getDoctype: function() {

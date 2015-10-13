@@ -206,13 +206,13 @@ counter-reset: sub-sub-section;
 section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]) section section {
 counter-increment: sub-sub-section;
 }
-section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]):not([id^=table-of-]) h2:before {
+section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]):not([id^=table-of-]) > h2:before {
 content: counter(section) ".\00a0\00a0\00a0\00a0";
 }
-section h3:before {
+section > h3:before {
 content: counter(section) "." counter(sub-section) "\00a0\00a0\00a0";
 }
-section h4:before {
+section > h4:before {
 content: counter(section)"." counter(sub-section) "." counter(sub-sub-section) "\00a0\00a0\00a0";
 }
 
@@ -278,6 +278,62 @@ caption:before {
 content: "Table " counter(table) ": ";
 }
 
+.toc, .toc ol {
+list-style:none;
+-moz-hyphens:none;
+-webkit-hyphens:none;
+-ms-hyphens:none;
+hyphens:none;
+}
+.toc ol,
+.toc li {
+margin:0;
+text-align:left !important;
+}
+
+.toc li {
+list-style-position:outside;
+list-style-type: none;
+margin-left: 1.25em;
+margin-bottom:0.25em;
+}
+.toc li:before {
+margin-left: -1.25em;
+}
+
+.toc li:not([data-id=abstract]):not([data-id=keywords]):not([data-id=references]):not([data-id=categories-and-subject-descriptors]):not([data-id=general-terms]):not([data-id=appendix]):not([data-id=contact-us]) {
+counter-increment: s;
+counter-reset: sub-s;
+}
+
+.toc li li:not([data-id=abstract]):not([id=document-status]):not([data-id=keywords]):not([data-id=references]):not([data-id=categories-and-subject-descriptors]):not([data-id=general-terms]):not([data-id=appendix]):not([data-id=contact-us]) {
+counter-increment: sub-s;
+counter-reset: sub-sub-s;
+}
+.toc li li li:not([data-id=abstract]):not([id=document-status]):not([data-id=keywords]):not([data-id=references]):not([data-id=categories-and-subject-descriptors]):not([data-id=general-terms]):not([data-id=appendix]):not([data-id=contact-us]) {
+counter-increment: sub-sub-s;
+counter-reset: sub-sub-sub-s;
+}
+.toc li li li li:not([data-id=abstract]):not([id=document-status]):not([data-id=keywords]):not([data-id=references]):not([data-id=categories-and-subject-descriptors]):not([data-id=general-terms]):not([data-id=appendix]):not([data-id=contact-us]) {
+counter-increment: sub-sub-sub-s;
+counter-reset: sub-sub-sub-sub-s;
+}
+.toc li:not([data-id=abstract]):not([id=document-status]):not([data-id=keywords]):not([data-id=references]):not([data-id=categories-and-subject-descriptors]):not([data-id=general-terms]):not([data-id=appendix]):not([data-id=contact-us]):before {
+content: "\00a0" counter(s) "\00a0";
+}
+.toc li li:not([data-id=abstract]):not([id=document-status]):not([data-id=keywords]):not([data-id=references]):not([data-id=categories-and-subject-descriptors]):not([data-id=general-terms]):not([data-id=appendix]):not([data-id=contact-us]):before {
+content: "\00a0" counter(s) "." counter(sub-s) "\00a0";
+}
+.toc li li li:not([data-id=abstract]):not([id=document-status]):not([data-id=keywords]):not([data-id=references]):not([data-id=categories-and-subject-descriptors]):not([data-id=general-terms]):not([data-id=appendix]):not([data-id=contact-us]):before {
+content: "\00a0" counter(s) "." counter(sub-s) "." counter(sub-sub-s) "\00a0";
+}
+.toc li li li li:not([data-id=abstract]):not([id=document-status]):not([data-id=keywords]):not([data-id=references]):not([data-id=categories-and-subject-descriptors]):not([data-id=general-terms]):not([data-id=appendix]):not([data-id=contact-us]):before {
+content: "\00a0" counter(s) "." counter(sub-s) "." counter(sub-sub-s) "." counter(sub-sub-sub-s) "\00a0";
+}
+
+.toc li[data-id=abstract]:before, .toc li[data-id=document-status]:before, .toc li[data-id=keywords]:before, .toc li[data-id=references]:before, .toc li[data-id=categories-and-subject-descriptors]:before, .toc li[data-id=general-terms]:before, .toc li[data-id=appendix]:before, .toc li[data-id=contact-us]:before {
+content: "\00a0\00a0\00a0\00a0";
+}
 
 
 .tex,
@@ -522,7 +578,8 @@ left:67%;
 }
 
 
-#authors dt {
+#authors dt,
+.authors dt {
 display:none;
 }
 
@@ -533,7 +590,9 @@ margin:0 auto;
 display:inline-block;
 text-align:center;
 }
-
+.authors dd {
+display:inline;
+}
 
 #general-terms li,
 #keywords li,
@@ -562,6 +621,13 @@ content:"";
 text-transform:capitalize;
 }
 
+.authors dd:not(:empty):after {
+content:",\0020";
+}
+.authors dd:last-child:after {
+content:"";
+}
+
 
 .e-content p,
 .e-content li {
@@ -585,6 +651,11 @@ display:none;
 #document-format dd {
 text-align:left;
 margin-left:0;
+}
+header #document-identifier dd,
+#document-event dt,
+#document-event dd {
+text-align:center;
 }
 
 html {
@@ -692,12 +763,86 @@ text-align:left;
 caption {
 padding:0.25em 0;
 }
-
 tbody th {
 text-align:left;
 }
+
+form {
+margin:1em 0;
+}
+form li {
+margin-bottom:0.5em;
+}
+form p {
+text-indent:0;
+}
+fieldset {
+padding:1em;
+}
+legend { font-weight:bold; }
+label {
+display:inline-block;
+font-weight:bold;
+width:17%;
+vertical-align:top;
+}
+label[for=nobot] {
+width:auto;
+}
+input,
+textarea,
+label {
+padding:0.25em;
+}
+input,
+textarea,
+select,
+button {
+font-family: inherit;
+font-size: inherit;
+}
+input[type=submit] {
+font-weight:bold;
+}
+
 figcaption {
 margin-bottom:1em;
+}
+
+
+.count {
+margin-bottom:0;
+font-weight:normal;
+font-size:1em;
+}
+.count:after {
+content:':';
+}
+section article {
+margin:0 0 2em 0;
+}
+section article article {
+padding-left:2.25em;
+margin-bottom:0;
+border-left:2px solid #ccc;
+}
+section article h1,
+section article h2,
+section article h3 {
+margin-bottom:0;
+font-size:1em;
+}
+section article h1,
+section article h2,
+section article h3 {
+margin-top:0;
+}
+section article img {
+vertical-align:middle;
+margin-right:0.25em;
+}
+section article p:last-child {
+margin-bottom:0;
 }
 
 
@@ -744,12 +889,23 @@ content: counter(appendix, upper-latin) "." counter(sub-appendix)"." counter(sub
 
 #header,
 #footer,
-#comment-write,
+#interaction-write,
 dl.entry-author,
 dl.datetimestamp,
 dl.entry-replies,
 dl.article_labels * {
 display:none;
+}
+
+body > header,
+body > footer {
+text-align:center;
+}
+body > header {
+margin-bottom:2em;
+}
+body > footer {
+margin-top:2em;
 }
 
 #document-purpose,
@@ -762,7 +918,7 @@ display:none;
 display:block;
 }
 
-@media only screen 
+@media only screen
 and (min-device-width : 320px)
 and (max-device-width : 568px) {
 body { font-size: 100%; }
@@ -773,8 +929,8 @@ column-count:1;
 }
 }
 
-@media only screen 
-and (min-device-width : 768px) 
+@media only screen
+and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 body {
 font-size:100%;
