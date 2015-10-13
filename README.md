@@ -1,2 +1,1 @@
-# research
-my open research work
+# Research on Linked Data-driven Web Components
