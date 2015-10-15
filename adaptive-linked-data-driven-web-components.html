@@ -548,13 +548,18 @@
                 <h2 about="[this:#implementation]" property="schema:name">Implementation</h2>
                 <div about="[this:#implementation]" property="schema:description">
                     <p>
-
+                        In order to realize the idea of adaptive Linked Data-driven Web components, we implemented an open-source software framework called <i>Linked Data Reactor (LD-Reactor)</i> which is available online at <a href="http://ld-r.org">http://ld-r.org</a>.
+                        LD-Reactor utilizes Facebook's <a href="https://facebook.github.io/react/">ReactJS</a> components, the <a href="https://facebook.github.io/flux">Flux</a> architecture, Yahoo!'s <a href="http://fluxible.io/">Fluxible</a> framework for isomorphic Web applications (i.e. running the components code both on the server and the client) and the <a href="http://semantic-ui.com/">Semantic-UI</a> framework for flexible UI themes.
+                        The main reasons we chose <i>React</i> components over other  Web Components solutions (e.g. <a href="http://www.polymer-project.org/">Polymer</a>, <a href="https://angularjs.org/">AngularJS</a>, <a href="http://emberjs.com/">EmberJS</a>, etc.) were the maturity and maintainability of the technology, the native multi-platform support, the number of developer tools/components/applications, and the efficiency of its underlying virtual DOM approach.
                     </p>
-                    <div style="text-align:center;">
-                        <a href="pdf/dataflow.pdf">
-                            <img src="images/dataflow.png" style="max-width:600px;" />
-                        </a>
-                    </div>
+                    <figure id="fig_dataflow">
+                        <div style="text-align:center;">
+                            <a href="pdf/dataflow.pdf">
+                                <img src="images/dataflow.png" style="max-width:600px;" />
+                            </a>
+                        </div>
+                        <figcaption style="text-align:center;">Data flow in the LD-Reactor framework.</figcaption>
+                    </figure>
 
                 </div>
             </section>
