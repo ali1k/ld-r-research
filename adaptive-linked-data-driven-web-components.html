@@ -560,7 +560,36 @@
                         </div>
                         <figcaption style="text-align:center;">Data flow in the LD-Reactor framework.</figcaption>
                     </figure>
-
+                    <p>
+                        As shown in <a href="#fig_dataflow">Figure 7</a>, LD-Reactor follows the Flux architecture which eschews MVC (Model-View-Controller) in favour of a unidirectional data flow.
+                        When a user interacts with a React component, the component propagates an action through a central dispatcher, to the various stores that hold the application's data and business logic, and updates all affected components.
+                        The component interaction with SPARQL endpoints to retrieve and update Linked Data occurs through the invocation of RESTful services in actions.
+                    </p>
+                    <p>
+                        In order to allow the bootstrapping of LDA UIs, LD-Reactor provides a comprehensive framework that combines the following main elements:
+                    </p>
+                    <ul>
+                        <li>
+                            A set of RESTful Web services that allow basic CRUD operations on Linked Data using SPARQL queries (* the framework is compliant with the SPARQL 1.1 standard. However, we have identified certain inconsistencies between OpenRDF Sesame and OpenLink Virtuoso RDF stores, which did not allow the execution of syntactically identical queries across both systems. Thereby, specific adaptors have been implemented for each of these two RDF stores.).
+                        </li>
+                        <li>
+                            A set of core components called <i>Reactors</i> which implement core Linked Data components together with their corresponding actions and stores.
+                        </li>
+                        <li>
+                            A set of default components which allow basic viewing, editing and browsing of Linked Data.
+                        </li>
+                        <li>
+                            A set of minimal viable configurations based on the type of data and properties from commonly-used vocabularies on the Semantic Web (e.g. foaf, dcterms and SKOS).
+                        </li>
+                        <li>
+                            A basic access control plugin which allows restricting read/write access to data.
+                        </li>
+                    </ul>
+                    <p>
+                        LD-Reactor implementation is compliant with <i>Microservices Architecture</i> [microservices] where the existing ReactJS components can be extended by complementary Linked Data services.
+                        In contrast to the centralized monolithic architecture, the microservices architecture, allows to put the main functionalities of the LDA into separate decoupled services and scale by distributing these services across servers, replicating as needed.
+                        This architectural style also helps to minimize the redeploying of the entire application when changes in components were requested.
+                    </p>
                 </div>
             </section>
             <section id="useCases" about="[this:]" rel="schema:hasPart" resource="[this:#useCases]">
