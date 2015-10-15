@@ -323,42 +323,150 @@
             <section id="adaptiveLDRWC" about="[this:]" rel="schema:hasPart" resource="[this:#adaptiveLDRWC]">
                 <h2 about="[this:#adaptiveLDRWC]" property="schema:name">Adaptive Linked Data-driven Web Components</h2>
                 <div about="[this:#adaptiveLDRWC]" property="schema:description">
-                    <div style="text-align:center;">
-                        <a href="pdf/framework.pdf">
-                            <img src="images/framework.png" style="max-width:400px;" />
-                        </a>
-                    </div>
+                    <p>
+                        In order to streamline the process of UI development in LDAs, we propose an architecture of adaptive LD-R Web components -- Web components enriched by the RDF data model.
+                        As shown in <a href="#fig_framework">Figure 2</a>, the proposed architecture addresses LDA UI reusability and flexibility by incorporating RDF-based Web components and scopes.
+                        In the following sections, the main elements of the architecture are described.
+                    </p>
+                    <figure id="fig_framework">
+                        <div style="text-align:center;">
+                            <a href="pdf/framework.pdf">
+                                <img src="images/framework.png" style="max-width:400px;" />
+                            </a>
+                        </div>
+                        <figcaption style="text-align:center;">Main elements of the adaptive LD-R Web components architecture.</figcaption>
+                    </figure>
 
                     <section id="ldrWC" about="[this:#adaptiveLDRWC]" rel="schema:hasPart" resource="[this:#ldrWC]">
                         <h3 about="[this:#ldrWC]" property="schema:name">LD-R Web Components</h2>
+                            <p>
+                                As depicted in <a href="#fig_architecture">Figure 3</a>, there are four core component levels in an LD-R Web application.
+                                Each core component abstracts the actions required for retrieving and updating the graph-based data and provides a basis for user-defined components to interact with Linked Data in three modes: view, edit and browse.
+                            </p>
                             <div about="[this:#ldrWC]" property="schema:description">
-                                <div style="text-align:center;">
-                                    <a href="pdf/architecture.pdf">
-                                        <img src="images/architecture.png" style="max-width:600px;" />
-                                    </a>
-                                </div>
-
+                                <figure id="fig_architecture">
+                                    <div style="text-align:center;">
+                                        <a href="pdf/architecture.pdf">
+                                            <img src="images/architecture.png" style="max-width:600px;" />
+                                        </a>
+                                    </div>
+                                    <figcaption style="text-align:center;">Core LD-R Web components.</figcaption>
+                                </figure>
                             </div>
+                            <p>
+                                The data-flow in the system starts from the <i>Dataset</i> component which handles all the events related to a set of resources under a named graph identified using a URI.
+                                The next level is the <i>Resource</i> component which is identified by a URI and indicates what is described in the application.
+                                A resource is described by a set of properties which are handled by the <i>Property</i> component.
+                                Properties can be either individual or aggregate when combining multiple features of a resource (e.g. a component that combines longitude and latitude properties; start date and end date properties for a date range, etc.).
+                                Each property is instantiated by an individual value or multiple values in case of an aggregate object.
+                                The value(s) of properties are controlled by the <i>Value</i> component.
+                                In turn, Value components invoke different components to view, edit and browse the property values.
+                                <i>Viewer</i>, <i>Editor</i> and <i>Browser</i> components are terminals in the LD-R single directional data flow where customized user-generated components can be plugged into the system.
+                                User interactions with the LD-R components are controlled by a set of configurations defined on one or more selected component levels known as scopes.
+                            </p>
                     </section>
 
                     <section id="scopes" about="[this:#adaptiveLDRWC]" rel="schema:hasPart" resource="[this:#scopes]">
                         <h3 about="[this:#scopes]" property="schema:name">Scopes and Configurations</h2>
                             <div about="[this:#scopes]" property="schema:description">
 
-                                <div style="text-align:center;">
-                                    <a href="pdf/scopes.pdf">
-                                        <img src="images/scopes.png" style="max-width:450px;" />
-                                    </a>
-                                </div>
+                                <figure id="fig_scopes">
+                                    <div style="text-align:center;">
+                                        <a href="pdf/scopes.pdf">
+                                            <img src="images/scopes.png" style="max-width:450px;" />
+                                        </a>
+                                    </div>
+                                    <figcaption style="text-align:center;">LD-R scopes based on the permutation of dataset, resource, property and value identifiers.</figcaption>
+                                </figure>
                                 <p>
-
+                                    LD-R Web components provide a versatile approach for context adaptation.
+                                    A context can be a specific domain of interest, a specific user requirement or both.
+                                    In order to enable customization and personalization, the LD-R approach exploits the concepts of <i>Scope</i> and <i>Configuration</i>.
+                                    A scope is defined as a hierarchical permutation of Dataset, Resource, Property and Value components (cf. <a href="#fig_scopes">Figure 4</a>).
+                                    Each scope conveys a certain level of specificity on a given context ranging from 1 (most specific) to 15 (least specific).
+                                    Scopes are defined by using either the URIs of named graphs, resources and properties, or by identifying the resource types and data types.
+                                    A configuration is defined as a setting which affects the way the LDA and Web components are interpreted and rendered (e.g. render a specific component for a specific RDF property or enforce a component to display Wikipedia page URIs for DBpedia resources).
+                                    UI adaptation is handled by traversing the configurations for scopes, populating the configurations and overwriting the configurations when a more specific applicable scope is found.
+                                    As shown below, in the worst case, when the <code>DRPV</code> scopes are given and the UI is supposed to render the Value components, all the 15 scopes need to be traversed for the adaptation:
                                 </p>
-                                <div style="text-align:center;">
-                                    <a href="pdf/exampleConfig.pdf">
-                                        <img src="images/exampleConfig.png" style="max-width:400px;" />
-                                    </a>
+                                <div style="">
+                                    <pre style="text-align:left">
+                                        InitialConfig = {initial application configuration}
+                                        Context = [array of scopes with the corresponding configuration objects]
+                                        Config = InitialConfig
+                                        for (i = 15; i < 1; i--) {
+                                            Config.compareWith(Context[i]) {
+                                                Config.addMissingAttributes()
+                                                Config.overwriteExistingAttributes()
+                                            }
+                                        }
+                                    </pre>
                                 </div>
+                                <figure id="fig_exampleConfig">
+                                    <div>
+                                        <a href="pdf/exampleConfig.pdf">
+                                            <img src="images/exampleConfig.png" style="max-width:400px;" />
+                                        </a>
+                                    </div>
+                                    <figcaption style="text-align:center;">A sample LD-R configuration hypergraph.</figcaption>
+                                </figure>
+                                <p>
+                                    <a href="#fig_exampleConfig"> Figure 5</a> demonstrates an example of the LD-R configuration hypergraph containing scopes with the maximum depth of <code>DRP</code>.
+                                    The graph defines a generic configuration for the application as C<sub>1</sub>.
+                                    There are configurations defined for the dataset scope D<sub></sub> as C<sub>2</sub>, for the resource scope R<sub>2</sub> as C<sub>3</sub> and for the property scope P<sub>2</sub> as C<sub>4</sub>.
+                                    There are also configurations for the <code>RP</code> scope R<sub>2</sub>P<sub>2</sub> as C<sub>5</sub> and for the <code>DRP</code> scope D<sub>1</sub>R<sub>2</sub>P<sub>2</sub> as C<sub>6</sub>.
+                                    Let's suppose we have a setting with the following values for the scopes and configurations:
+                                </p>
+                                <ul>
+                                    <li>
+                                    D<sub>1</sub>= <code>http://ld-r.org/users</code>
+                                    </li>
+                                    <li>
+                                    R<sub>2</sub>= type <code>foaf:Person</code>
+                                    </li>
+                                    <li>
+                                        P<sub>2</sub>= <code>rdfs:label</code>
+                                    </li>
+                                    <li>
+                                        C<sub>1</sub>={{viewer:'basic'},{attr<sub>1</sub>:1},{attr<sub>2</sub>:3}}
+                                    </li>
+                                    <li>
+                                    C<sub>2</sub>={{attr<sub>1</sub>:0},{attr<sub>3</sub>:2}}
+                                    </li>
+                                    <li>
+                                    C<sub>3</sub>$={{attr<sub>3</sub>:1},{attr<sub>4</sub>:4},{attr<sub>5</sub>:1}}
+                                    </li>
+                                    <li>
+                                    C<sub>4</sub>={{attr<sub>5</sub>:2},{attr<sub>6</sub>:1}}
+                                    </li>
+                                    <li>
+                                    C<sub>5</sub>={{viewer:'contact'},{attr<sub>3</sub>:5},{attr<sub>7</sub>:6}}
+                                    </li>
+                                    <li>
+                                    C<sub>6</sub>={{attr<sub>3</sub>:8},{attr<sub>7</sub>:1},{attr<sub>8</sub>:3}}
+                                    </li>
+                                </ul>
+                                <p>
+                                    With the above settings, when a property component for <code>rdfs:label</code> is rendered without the dataset and resource context, the configuration will be:<br/>
 
+ {{viewer:'basic'},{attr<sub>1</sub>:1},{attr<sub>2</sub>:3},{attr<sub>5</sub>:2},{attr<sub>6</sub>:1}}
+
+                                <br/>When the property component gets rendered within the resource context of type <code>foaf:Person</code>, the settings for viewer and attr<sub>5</sub> are overwritten and new settings for attr<sub>3</sub>, attr<sub>4</sub> and attr<sub>7</sub> are added:<br/>
+
+{{viewer:'contact'},{attr<sub>1</sub>:1},{attr<sub>2</sub>:3},{attr<sub>3</sub>:5},{attr<sub>4</sub>:4},{attr<sub>5</sub>:1},{attr<sub>6</sub>:1},{attr<sub>7</sub>:6}}
+
+                            <br/>When the additional context of dataset as <code>http://ld-r.org/users</code> is given, attr<sub>3</sub> and attr<sub>7</sub> get overwritten and a new setting for attr<sub>8</sub> is added:<br/>
+
+{{viewer:'contact'},{attr<sub>1</sub>:0},{attr<sub>2</sub>:3},{attr<sub>3</sub>:8},{attr<sub>4</sub>:4},{attr<sub>5</sub>:1},{attr<sub>6</sub>:1},{attr<sub>7</sub>:1},{attr<sub>8</sub>:3}}
+                                </p>
+                                <p>
+                                    Scopes can also be defined on a per user basis, facilitating the versioning and reuse of user-specific configurations.
+                                    User-Specific configurations provide different views on components and thereby data, based on the different personas dealing with them.
+                                </p>
+                                <p>
+                                    In addition to the fine-grained component customization, LD-R Web applications provide a fine-grained access control over the data through the component scopes.
+                                    For example, an application developer can restrict access to a specific property of a specific resource in a certain dataset and on a specific interaction mode.
+                                </p>
                             </div>
                     </section>
 
