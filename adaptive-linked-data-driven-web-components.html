@@ -766,12 +766,48 @@
                     <section id="openPHACTS" about="[this:#useCases]" rel="schema:hasPart" resource="[this:#openPHACTS]">
                         <h3 about="[this:#openPHACTS]" property="schema:name">Open PHACTS</h2>
                             <div about="[this:#openPHACTS]" property="schema:description">
+                                <p>
+                                    The Open PHACTS Discovery Platform has been developed to reduce barriers to drug discovery, by collecting and integrating a large number of prominent RDF datasets in the pharmacology domain. The platform provides a uniform RESTful API for application developers to access the integrated data.
+                                    In collaboration with the data providers, the Open PHACTS consortium has created a comprehensive <a href="http://www.openphacts.org/specs/2013/WD-datadesc-20130912/">dataset description specification</a> based on the Vocabulary of Interlinked Datasets (<a href="http://www.w3.org/TR/void/">VoID</a>). The metadata provided in this context enables (among others) exposing the detailed provenance for each result produced by the platform, the location of source files for each dataset, and example resources.
+                                </p>
+                                <p>
+                                    The provision of VoID dataset descriptors that adhere to the specification proved to be a non-trivial challenge, even for data providers that are well versed in providing RDF distributions of their core data. A series of UIs were therefore created to facilitate the creation of the VoID descriptors. However, as the specification evolved over the first 2 years of the project, any changes or additions made had to be reflected in the UI source code as well; a cumbersome process. Due to the inevitable delay between specification changes and UI development, users often found themselves having to edit large RDF files using text editors, which resulted in frequent syntax errors being made.
+                                </p>
+                                <p>
+                                    A new version of the VoID editor implemented using the LD-Reactor framework is now available online (<a href="http://void.ops.labs.vu.nl/">http://void.ops.labs.vu.nl/</a> Source: <a href="http://github.com/openphacts/ld-r">http://github.com/openphacts/ld-r</a>). Though the  import/export capabilities of the editor are still not implemented at the time of writing, we have received very positive feedback from the community for a number of reasons:
+                                </p>
+                                <ul>
+                                    <li>
+                                        UI updates: As the UI is generated based on the underlying data, the process of staying up to date with the current specification becomes trivial. The RDF example provided by the specification can be simply loaded into the RDF store and the changes are immediately visible in the UI through the default core components. Users are then able to adapt the example VoID description to their dataset. The resulting VoID file can be downloaded by exporting all triples in the named graph corresponding to the dataset.
+                                    </li>
+                                    <li>
+                                        Dataset releases: A large number of property values remain the same across releases. Similarly with using the example from the Dataset Description Specification, users are able to upload their old VoID description and only edit the outdated values.
+                                    </li>
+                                    <li>
+                                        Access control: Using the built--in user authentication mechanism of LD-Reactor we were able to ensure that only the owner(s) of a particular dataset are able to edit its metadata.
+                                    </li>
+                                    <li>
+                                        Non-standard properties: Some data providers elect to include additional properties that are not prescribed by the specification. The visualisation of such properties is supported easily using the core LD-R components.
+                                    </li>
+                                    <li>
+                                        Intuitive navigation: Typically, each dataset consists of a number of subsets, which are also of type <code>void:Dataset</code>, and may have further subsets themselves. Displaying all the information together can easily become confusing for the user; instead the LD-Reactor framework was used to provide navigation through the subset links, displaying only a single dataset (or subset) at a time.
+                                    </li>
+                                    <li>
+                                        Datetime component: Manually typing datetimes in the required format (e.g. `2015-02-12T16:48:00Z') can be an error prone process. Instead, we have been able to reuse the <a href="https://github.com/quri/react-bootstrap-datetimepicker"><code>react-bootstrap-datetimepicker</code></a> component, to create a new LD-R value editor for datetimes (<a href="https://github.com/openphacts/ld-r/blob/master/components/object/editor/individual/BasicCalendarInput.js">BasicCalendarInput</a>) with a graphical interface as shown in <a href="fig_ops">Figure 13</a>.
+                                    </li>
+                                </ul>
+                                <p>
+                                    In addition to the significant improvements over previous versions of the VoID editor outlined above, we were able to develop the LD-Reactor version in a fraction of the time that was required for earlier versions.
+                                </p>
+                                <figure id="fig_ops">
+                                    <div style="text-align:center;">
+                                        <a href="images/ops_ldr.png">
+                                            <img src="images/ops_ldr.png" style="max-width:500px" />
+                                        </a>
+                                    </div>
+                                    <figcaption style="text-align:center;">A screenshot of the BasicCalendarInput LD-R component created to allow the editing of datetimes in Open PHACTS VoID descriptions.</figcaption>
+                                </figure>
 
-                                <div style="text-align:center;">
-                                    <a href="images/ops_ldr.png">
-                                        <img src="images/ops_ldr.png" style="max-width:500px" />
-                                    </a>
-                                </div>
 
                             </div>
                     </section>
