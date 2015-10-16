@@ -480,7 +480,7 @@
                         <h3 about="[this:#semanticMarkup]" property="schema:name">Semantic Markup for Web Components</h2>
                             <div about="[this:#semanticMarkup]" property="schema:description">
                                 <p>
-                                    The innate support of RDF in LD-R Web components enable the automatic creation of semantic markup in the UI level.
+                                    The innate support of RDF in LD-R Web components enable the automatic creation of semantic markup on the UI level.
                                     Lower semantic techniques such as <i>RDFa</i>, <i>Mircodata</i> and <i>JSON-LD</i> can be incorporated in the core LD-R components to expose structured data to current search engines which are capable of parsing semantic markup.
                                     For example, an LD-R component created based on the <a href="http://www.heppnetz.de/projects/goodrelations/">Good Relations</a> or <a href="http://schema.org">Schema.org</a> ontologies, can automatically expose the product data as <a href="https://developers.google.com/structured-data/">Google Rich Snippets</a> for products which will provide better visibility of the data on Web search results (i.e. SEO).
                                 </p>
@@ -535,7 +535,7 @@
                                     </li>
                                     <li>
                                         <i>Application Assembler</i>.
-                                        The main task of application assembler is to identify the right components and configurations for the application; and to combine them in a way which fits the application requirement.
+                                        The main task of application assemblers is to identify the right components and configurations for the application; and to combine them in a way which fits the application requirements.
                                         Within the LD-R component system, the metadata provided by each Web component facilitates the discovery of relevant components.
                                         Having shared vocabularies on Linked Open Data allows assemblers to not only reuse components but also reuse the existing configurations and scopes published on the Web.
                                         For example, if there is already a suitable configuration for <code>RP</code> scope which uses <code>foaf:Person</code> as resource type and <code>dcterms:description</code> as property URI, the assembler can reuse that configuration within his application.
@@ -593,11 +593,11 @@
                     </ul>
                     <p>
                         LD-Reactor implementation is compliant with <i>Microservices Architecture</i> [microservices] where the existing ReactJS components can be extended by complementary Linked Data services.
-                        In contrast to the centralized monolithic architecture, the microservices architecture, allows to put the main functionalities of the LDA into separate decoupled services and scale by distributing these services across servers, replicating as needed.
+                        In contrast to the centralized monolithic architecture, the microservices architecture, allows plcaing the main functionalities of the LDA into separate decoupled services and scale by distributing these services across servers, replicating as needed.
                         This architectural style also helps to minimize the redeploying of the entire application when changes in components were requested.
                     </p>
                     <p>
-                        There are three modes of interactions within LD-R components namely <i>view</i>, <i>browse</i> and <i>edit</i> mode.
+                        There are three modes of interactions within LD-R components namely <i>view</i>, <i>browse</i> and <i>edit</i>.
                         These modes work with two types of value granularity: individual and aggregate.
                         As shown in <a href="#fig_viewedit"> Figure 8</a>, components can target individual values or interact with aggregate values when users want to show/update multiple values at once.
                         <a href="#fig_facets">Figure 9</a> depicts the browse mode where individual (e.g. item lists with check boxes) and aggregate data browser (e.g. data sliders or maps) components can be employed.
