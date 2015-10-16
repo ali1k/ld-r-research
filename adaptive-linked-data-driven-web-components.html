@@ -645,43 +645,43 @@
                                 </p>
                                 <ul> Configurations:
                                 <li>
-                                    The UI should be able to to render metadata properties in different categories (\autoref{code:config} line 3, 4).
+                                    The UI should be able to to render metadata properties in different categories (<a href="#fig_configCode">Figure 11</a> line 3, 4).
                                 </li>
                                 <li>
-                                    The labels for properties should be changeable in the UI especially for technical properties (e.g. RDF dump) that are unknown to researchers outside the Semantic Web domain (\autoref{code:config} line 18, 26, 40).
+                                    The labels for properties should be changeable in the UI especially for technical properties (e.g. RDF dump) that are unknown to researchers outside the Semantic Web domain (<a href="#fig_configCode">Figure 11</a> line 18, 26, 40).
                                 </li>
                                 <li>
-                                    There should be a hint for properties to help metadata editors to understand the meaning of the property (\autoref{code:config} line 20, 28, 41).
+                                    There should be a hint for properties to help metadata editors to understand the meaning of the property (<a href="#fig_configCode">Figure 11</a> line 20, 28, 41).
                                 </li>
                                 <li>
-                                    Instead of showing the full URIs, the output UI should render either a shortened URI or a meaningful string linked to the original URI (\autoref{code:config} line 6).
+                                    Instead of showing the full URIs, the output UI should render either a shortened URI or a meaningful string linked to the original URI (<a href="#fig_configCode">Figure 11</a> line 6).
                                 </li>
                                 <li>
-                                    Whenever a DBpedia URI is provided, display the corresponding Wikipedia URI enabling users to retrieve human readable information (\autoref{code:config} line 33, 45).
+                                    Whenever a DBpedia URI is provided, display the corresponding Wikipedia URI enabling users to retrieve human readable information (<a href="#fig_configCode">Figure 11</a> line 33, 45).
                                 </li>
                                 <li>
-                                    When a dropdown menu is provided, there should be the ability to accommodate user-defined values which are not listed in the menu (\autoref{code:config} line 57).
+                                    When a dropdown menu is provided, there should be the ability to accommodate user-defined values which are not listed in the menu (<a href="#fig_configCode">Figure 11</a> line 57).
                                 </li>
                                 </ul>
                                 <ul> Components:
                                     <li>
-                                        A component for \texttt{dcterms:spatial} values to allow searching and inserting resources from DBpedia based on the entity type (e.g. Place, Person, Organization, etc).
+                                        A component for <code>dcterms:spatial</code> values to allow searching and inserting resources from DBpedia based on the entity type (e.g. Place, Person, Organization, etc).
                                     </li>
                                     <li>
-                                    A component for \texttt{dcterms:subject} values to allow inserting and viewing DBpedia URIs as subject.
+                                    A component for <code>dcterms:subject</code> values to allow inserting and viewing DBpedia URIs as subject.
                                     </li>
                                     <li>
-                                    A component for \texttt{dcterms:language} values to allow inserting and viewing languages formatted in ISO 639-1 using standard URIs (e.g. \\ \url{http://id.loc.gov/vocabulary/iso639-1/en}).
+                                    A component for <code>dcterms:language</code> values to allow inserting and viewing languages formatted in ISO 639-1 using standard URIs (e.g. <a href="http://id.loc.gov/vocabulary/iso639-1/en">http://id.loc.gov/vocabulary/iso639-1/en</a>).
                                     </li>
                                     <li>
-                                    A component for \texttt{dcat:byteSize} values to allow inserting and viewing file size specified by a unit.
+                                    A component for <code>dcat:byteSize</code> values to allow inserting and viewing file size specified by a unit.
                                     </li>
                                     <li>
-                                        A component for \texttt{dcterms:format} values to allow inserting and viewing mime types.
+                                        A component for <code>dcterms:format</code> values to allow inserting and viewing mime types.
                                     </li>
                                 </ul>
                                 <p>
-                                    In accordance to the LD-Reactor microservices architecture (cf. Section \ref{sec:implementation}), we built a \emph{DBpediaGMap} viewer component where we reused the current <a href="http://github.com/tomchentw/react-google-maps">react-google-maps</a> together with DBpedia lookup and query services to retrieve the coordinates for the recognized DBpedia resource values.
+                                    In accordance to the LD-Reactor microservices architecture, we built a <i>DBpediaGMap</i> viewer component where we reused the current <a href="http://github.com/tomchentw/react-google-maps">react-google-maps</a> together with DBpedia lookup and query services to retrieve the coordinates for the recognized DBpedia resource values.
                                     <a href="#fig_risis">Figure 12</a> shows a screenshot of the generated UIs for metadata and search.
                                 </p>
 
