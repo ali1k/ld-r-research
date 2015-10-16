@@ -395,19 +395,22 @@
                                     UI adaptation is handled by traversing the configurations for scopes, populating the configurations and overwriting the configurations when a more specific applicable scope is found.
                                     As shown below, in the worst case, when the <code>DRPV</code> scopes are used and the UI is supposed to render the Value components, all 15 scopes need to be traversed for the adaptation:
                                 </p>
-                                <div style="text-align:center;">
-                                    <pre style="text-align:left;display: table">
-                                        InitialConfig = {initial application configuration}
-                                        Context = [array of scopes with the corresponding configuration objects]
-                                        Config = InitialConfig
-                                        for (i = 15; i < 1; i--) {
-                                            Config.compareWith(Context[i]) {
-                                                Config.addMissingAttributes()
-                                                Config.overwriteExistingAttributes()
+                                <figure id="fig_algorithm">
+                                    <div style="text-align:center;">
+                                        <pre style="text-align:left;display: table">
+                                            InitialConfig = {initial application configuration}
+                                            Context = [array of scopes with the corresponding configuration objects]
+                                            Config = InitialConfig
+                                            for (i = 15; i < 1; i--) {
+                                                Config.compareWith(Context[i]) {
+                                                    Config.addMissingAttributes()
+                                                    Config.overwriteExistingAttributes()
+                                                }
                                             }
-                                        }
-                                    </pre>
-                                </div>
+                                        </pre>
+                                    </div>
+                                    <figcaption style="text-align:center;">Algorithm for the LD-R UI adaptation.</figcaption>
+                                </figure>
                                 <figure id="fig_exampleConfig">
                                     <div>
                                         <a href="pdf/exampleConfig.pdf">
@@ -514,7 +517,7 @@
                                     <figcaption style="text-align:center;">LD-R components life cycle.</figcaption>
                                 </figure>
                                 <p>
-                                    As shown in <a href="#fig_lifecycle">Figure 6</a>, the LD-R components lifecycle encompasses four primary types of stakeholders:
+                                    As shown in <a href="#fig_lifecycle">Figure 7</a>, the LD-R components lifecycle encompasses four primary types of stakeholders:
                                 </p>
                                 <ul>
                                     <li>
@@ -567,7 +570,7 @@
                         <figcaption style="text-align:center;">Data flow in the LD-Reactor framework.</figcaption>
                     </figure>
                     <p>
-                        As shown in <a href="#fig_dataflow">Figure 7</a>, LD-Reactor follows the Flux architecture which eschews MVC (Model-View-Controller) in favour of a unidirectional data flow.
+                        As shown in <a href="#fig_dataflow">Figure 8</a>, LD-Reactor follows the Flux architecture which eschews MVC (Model-View-Controller) in favour of a unidirectional data flow.
                         When a user interacts with a React component, the component propagates an action through a central dispatcher, to the various stores that hold the application's data and business logic, and updates all affected components.
                         The component interaction with SPARQL endpoints to retrieve and update Linked Data occurs through the invocation of RESTful services in actions.
                     </p>
@@ -599,8 +602,8 @@
                     <p>
                         There are three modes of interactions within LD-R components namely <i>view</i>, <i>browse</i> and <i>edit</i>.
                         These modes work with two types of value granularity: individual and aggregate.
-                        As shown in <a href="#fig_viewedit"> Figure 8</a>, components can target individual values or interact with aggregate values when users want to show/update multiple values at once.
-                        <a href="#fig_facets">Figure 9</a> depicts the browse mode where individual (e.g. item lists with check boxes) and aggregate data browser (e.g. data sliders or maps) components can be employed.
+                        As shown in <a href="#fig_viewedit"> Figure 9</a>, components can target individual values or interact with aggregate values when users want to show/update multiple values at once.
+                        <a href="#fig_facets">Figure 10</a> depicts the browse mode where individual (e.g. item lists with check boxes) and aggregate data browser (e.g. data sliders or maps) components can be employed.
                     </p>
                     <figure id="fig_viewedit">
                         <div style="text-align:center;">
@@ -640,6 +643,114 @@
                                 <p>
                                     In the following, we present the main requirements for configurations and components, together with their representation in the LD-Reactor configuration file (see the complete configuration file at <a href="http://github.com/risis-eu/sms-platform">http://github.com/risis-eu/sms-platform</a>).
                                 </p>
+                                <ul> Configurations:
+                                <li>
+                                    The UI should be able to to render metadata properties in different categories (\autoref{code:config} line 3, 4).
+                                </li>
+                                <li>
+                                    The labels for properties should be changeable in the UI especially for technical properties (e.g. RDF dump) that are unknown to researchers outside the Semantic Web domain (\autoref{code:config} line 18, 26, 40).
+                                </li>
+                                <li>
+                                    There should be a hint for properties to help metadata editors to understand the meaning of the property (\autoref{code:config} line 20, 28, 41).
+                                </li>
+                                <li>
+                                    Instead of showing the full URIs, the output UI should render either a shortened URI or a meaningful string linked to the original URI (\autoref{code:config} line 6).
+                                </li>
+                                <li>
+                                    Whenever a DBpedia URI is provided, display the corresponding Wikipedia URI enabling users to retrieve human readable information (\autoref{code:config} line 33, 45).
+                                </li>
+                                <li>
+                                    When a dropdown menu is provided, there should be the ability to accommodate user-defined values which are not listed in the menu (\autoref{code:config} line 57).
+                                </li>
+                                </ul>
+                                <ul> Components:
+                                    <li>
+                                        A component for \texttt{dcterms:spatial} values to allow searching and inserting resources from DBpedia based on the entity type (e.g. Place, Person, Organization, etc).
+                                    </li>
+                                    <li>
+                                    A component for \texttt{dcterms:subject} values to allow inserting and viewing DBpedia URIs as subject.
+                                    </li>
+                                    <li>
+                                    A component for \texttt{dcterms:language} values to allow inserting and viewing languages formatted in ISO 639-1 using standard URIs (e.g. \\ \url{http://id.loc.gov/vocabulary/iso639-1/en}).
+                                    </li>
+                                    <li>
+                                    A component for \texttt{dcat:byteSize} values to allow inserting and viewing file size specified by a unit.
+                                    </li>
+                                    <li>
+                                        A component for \texttt{dcterms:format} values to allow inserting and viewing mime types.
+                                    </li>
+                                </ul>
+                                <p>
+                                    In accordance to the LD-Reactor microservices architecture (cf. Section \ref{sec:implementation}), we built a \emph{DBpediaGMap} viewer component where we reused the current <a href="http://github.com/tomchentw/react-google-maps">react-google-maps</a> together with DBpedia lookup and query services to retrieve the coordinates for the recognized DBpedia resource values.
+                                    <a href="#fig_risis">Figure 12</a> shows a screenshot of the generated UIs for metadata and search.
+                                </p>
+
+                                <figure id="fig_configCode">
+                                    <div>
+                                        <pre>
+                                            resource: {
+                                                `generic': {
+                                                    usePropertyCategories: 1,
+                                                    propertyCategories: [`overview', `legalAspects', `technicalAspects'],
+                                                    resourceReactor: [`Resource'],
+                                                    shortenURI: 1
+                                                }
+                                            },
+                                            property: {
+                                                `generic': {
+                                                    propertyReactor: [`IndividualProperty'],
+                                                    objectReactor: [`IndividualObject'],
+                                                    objectIViewer: [`BasicIndividualView'],
+                                                    objectIEditor: [`BasicIndividualInput']
+                                                },
+                                                `http://purl.org/dc/terms/language': {
+                                                    allowNewValue: 1,
+                                                    label: [`Dataset Language'],
+                                                    category: [`overview'],
+                                                    hint: [`The language of the dataset. Resources defined by the Library of Congress (http://id.loc.gov/vocabulary/iso639-1.html, http://id.loc.gov/vocabulary/iso639-2.html) SHOULD be used.'],
+                                                    objectIViewer: [`LanguageView'],
+                                                    objectIEditor: [`LanguageInput'],
+                                                    defaultValue: [`http://id.loc.gov/vocabulary/iso639-1/en']
+                                                },
+                                                `http://purl.org/dc/terms/spatial': {
+                                                     label: [`Geographical coverage'],
+                                                     category: [`overview'],
+                                                     hint: [`The geographical area covered by the dataset.'],
+                                                     allowNewValue: 1,
+                                                     objectReactor: [`AggregateObject'],
+                                                     objectAViewer: [`DBpediaGoogleMapView'],
+                                                     objectIViewer: [`BasicDBpediaView'],
+                                                     asWikipedia: 1,
+                                                     objectAEditor: [`BasicAggregateInput'],
+                                                     objectIEditor: [`DBpediaInput'],
+                                                     lookupClass: [`Place']
+                                                 },
+                                                `http://purl.org/dc/terms/subject': {
+                                                    category: [`overview'],
+                                                    label: [`Keywords'],
+                                                    hint: [`Tags a dataset with a topic.'],
+                                                    allowNewValue: 1,
+                                                    objectIEditor: [`DBpediaInput'],
+                                                    objectIViewer: [`BasicDBpediaView'],
+                                                    asWikipedia: 1
+                                                },
+                                                `http://purl.org/dc/terms/license': {
+                                                    category: [`legalAspects'],
+                                                    label: [`License'],
+                                                    allowNewValue: 1,
+                                                    objectIViewer: [`BasicOptionView'],
+                                                    objectIEditor: [`BasicOptionInput'],
+                                                    options: [
+                                                        {label: `Open Data Commons Attribution License', value: `http://www.opendatacommons.org/licenses/by/'},
+                                                        {label: `Creative Commons Attribution-ShareAlike', value: `http://creativecommons.org/licenses/by-sa/3.0/'}
+                                                    ],
+                                                    allowUserDefinedValue: 1
+                                                }
+                                            }
+                                        </pre>
+                                    </div>
+                                    <figcaption style="text-align:center;">An excerpt of the LD-Reactor configuration for the RISIS metadata editor.</figcaption>
+                                </figure>
                                 <figure id="fig_risis">
                                     <div style="text-align:center;">
                                         <a href="images/screenshots.jpg">
