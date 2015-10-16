@@ -817,7 +817,37 @@
                 <h2 about="[this:#relatedWork]" property="schema:name">Related Work</h2>
                 <div about="[this:#relatedWork]" property="schema:description">
                     <p>
-
+                        Component-based software engineering (CBSE) has been an active research area since 1987 with numerous results published in the research literature[Vale2015].
+                        Within the Semantic Web community, the main focus has been on enriching current service-oriented architectures (SOAs) with semantic formalisms and thereby providing Semantic Web services as reusable and scalable software components[sws2015].
+                        There have also been a few attempts to create Semantic Web Components by integrating existing Web-based components with Semantic Web technology[pahl2011,HartigKF08].
+                    </p>
+                    <p>
+                        When it comes to component-based development of LDAs, the works typically fall into
+software application frameworks that address building scalable LDAs in a modular way.
+The survey conducted by [SWASurvey09] identified the main issues in current Semantic Web applications and suggested the provision of component-based software frameworks as a potential solution to the issues identified.
+The Semantic Web Framework[swFramework2008] was one of the first attempts in that direction to decompose the LDA development requirements into an architecture of reusable software components.
+In most of the current full-stack LDA frameworks such as <a href="http://callimachusproject.org/">Callimachus</a> and <a href="http://ldif.wbsg.de/">LDIF</a> the focus is mainly on the backend side of LDAs and less attention is paid on how Linked Data is consumed by the end-user.
+There are also more flexible application frameworks such as OntoWiki[ontowiki-swj] which provide UI widgets and extensions to expose Linked Data to non-Semantic Web end-users.
+                    </p>
+                    <p>
+                        Besides these generic LDA frameworks, there are also approaches that focus on the development of user interfaces for LDAs.
+WYSIWYM (What You See Is What You Mean)[WYSIWYM2014] is a generic semantics-based UI model to allow integrated visualization, exploration and authoring of structured and unstructured data.
+Our proposed approach utilizes the WYSIWYM model for binding RDF-based data to viewer, editor and browser UIs.
+Uduvudu[Uduvudu2015] is another approach to making an adaptive RDF-based UI engine to render Linked Data.
+Instead of adopting Web components, Uduvudu employs a set of flexible UI templates that can be combined to create complex UIs.
+Even though the static templates do not provide enough interactions for editing and browsing data (in contrast to Web components), we believe that algorithms for automatic selection of templates employed in Uduvudu can be reused in the LD-Reactor framework for automatic generation of configurations.
+Another similar approach is SemwidgJS[StegemannZ14] which brings a semantic Widget library for the rapid development of LDA UIs.
+SemwidgJS offers a simplified query language to allow the navigation of graph-based data by ordinary Web developers.
+The main difference between LD-R and SemwidgJS is that LD-Reactor suggests a more interactive model which is not only for displaying Linked Data but also for providing user adaptations based on the meaning of data.
+LD-Viewer[Lukovnikov2014] is another related Linked Data presentation framework particularly tailored for the presentation of DBpedia resources.
+In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC architecture and its extensions rely heavily on the knowledge of RDF which is a burden for developers unfamiliar with Semantic Web technologies.
+                    </p>
+                    <p>
+                        In addition to the LDA UI frameworks, there are several ad-hoc tools for Linked Data visualization and exploration such as Balloon Synopsis[BalloonSchlegelWSGK14] and Sgvizler[Sgvizler] which can  be utilized as Web components within the LD-Reactor framework.
+[Abascal2015] provides an extensive list of these tools aiming to make Linked Data accessible for common end-users who are not familiar with Semantic Web.
+                    </p>
+                    <p>
+                        Overall, what distinguishes LD-Reactor from the existing frameworks and tools is its modern isomorphic component-based architecture that addresses reactive and reusable UIs as its first class citizen.
                     </p>
                 </div>
             </section>
