@@ -590,6 +590,32 @@
                         In contrast to the centralized monolithic architecture, the microservices architecture, allows to put the main functionalities of the LDA into separate decoupled services and scale by distributing these services across servers, replicating as needed.
                         This architectural style also helps to minimize the redeploying of the entire application when changes in components were requested.
                     </p>
+                    <p>
+                        There are three modes of interactions within LD-R components namely <i>view</i>, <i>browse</i> and <i>edit</i> mode.
+                        These modes work with two types of value granularity: individual and aggregate.
+                        As shown in <a href="#fig_viewedit"> Figure 8</a>, components can target individual values or interact with aggregate values when users want to show/update multiple values at once.
+                        <a href="#fig_facets">Figure 9</a> depicts the browse mode where individual (e.g. item lists with check boxes) and aggregate data browser (e.g. data sliders or maps) components can be employed.
+                    </p>
+                    <figure id="fig_viewedit">
+                        <div style="text-align:center;">
+                            <a href="images/viewedit.png">
+                                <img src="images/viewedit.png" style="max-width:600px;" />
+                            </a>
+                        </div>
+                        <figcaption style="text-align:center;">A screenshot of LD-Reactor view and edit mode for individual (top) and aggregate (bottom) values.</figcaption>
+                    </figure>
+                    <figure id="fig_facets">
+                        <div style="text-align:center;">
+                            <a href="images/facets.jpg">
+                                <img src="images/facets.jpg" style="max-width:600px;" />
+                            </a>
+                        </div>
+                        <figcaption style="text-align:center;">A screenshot of LD-Reactor browse mode.</figcaption>
+                    </figure>
+                    <p>
+                        <a href="#semanticMarkup">Semantic markup of data</a> is supported natively within the framework by embedding Microdata annotations within the LD-R Web components.
+                        Additionally, in order to facilitate the creation of component metadata, we developed a <a href="https://github.com/ali1k/ld-r-metadata-generator">tool</a> which automatically generates the general metadata about the components in JSON-LD, using <a href="http://schema.org">Schema.org</a>'s <a href="https://schema.org/SoftwareApplication">SoftwareApplication</a> schema.
+                    </p>
                 </div>
             </section>
             <section id="useCases" about="[this:]" rel="schema:hasPart" resource="[this:#useCases]">
