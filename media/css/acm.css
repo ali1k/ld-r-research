@@ -90,7 +90,7 @@ widows: 2;
 }
 
 body {
-font-size:150%;
+font-size:100%;
 font-family: "Times New Roman", serif;
 /*position:relative;*/
 counter-reset: section;
@@ -195,18 +195,18 @@ h3, h4, h5, h6 {
 margin-top:1em;
 }
 
-section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]) {
+article section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]) {
 counter-increment: section;
 counter-reset: sub-section;
 }
-section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]) section {
+article section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]) section {
 counter-increment: sub-section;
 counter-reset: sub-sub-section;
 }
-section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]) section section {
+article section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]) section section {
 counter-increment: sub-sub-section;
 }
-section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]):not([id^=table-of-]) > h2:before {
+article section:not([id=abstract]):not([id=document-status]):not([id=keywords]):not([id=references]):not([id=categories-and-subject-descriptors]):not([id=general-terms]):not([id=appendix]):not([id=contact-us]):not([id^=table-of-]) > h2:before {
 content: counter(section) ".\00a0\00a0\00a0\00a0";
 }
 section > h3:before {
@@ -783,6 +783,8 @@ legend { font-weight:bold; }
 label {
 display:inline-block;
 font-weight:bold;
+}
+form label {
 width:17%;
 vertical-align:top;
 }
@@ -887,8 +889,8 @@ content: counter(appendix, upper-latin) "." counter(sub-appendix)"." counter(sub
 }
 
 
-#header,
-#footer,
+body > header,
+body > footer,
 #interaction-write,
 dl.entry-author,
 dl.datetimestamp,
