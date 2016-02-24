@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Adaptive Linked Data-driven Web Components: Building Flexible and Reusable Semantic Web Interfaces</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link href="https://dokie.li/media/css/lncs.css" media="all" rel="stylesheet" title="LNCS" />
+        <link href="https://dokie.li/media/css/acm.css" media="all" rel="stylesheet alternate" title="ACM" />
+        <link href="https://dokie.li/media/css/do.css" media="all" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" media="all" rel="stylesheet" />
+        <link href="https://dokie.li/media/css/editor.css" media="all" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="https://dokie.li/scripts/simplerdf.js"></script>
+        <script src="https://dokie.li/scripts/html.sortable.min.js"></script>
+        <script src="https://dokie.li/scripts/medium-editor.min.js"></script>
+        <script src="https://dokie.li/scripts/medium-editor-tables.min.js"></script>
+        <script src="https://dokie.li/scripts/do.js"></script>
+        <style>
+            body {
+                background-color: #fff;
+                background-image:
+                linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                linear-gradient(#eee .1em, transparent .1em);
+                background-size: 100% 1.2em;
+            }
+        </style>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <title>Adaptive Linked Data-driven Web Components: Building Flexible and Reusable Semantic Web Interfaces</title>
-    <link rel="stylesheet" href="media/css/lncs.css" media="all" title="LNCS"/>
-    <link rel="stylesheet alternate" href="media/css/acm.css" media="all" title="ACM"/>
-    <link rel="stylesheet alternate" href="http://www.w3.org/StyleSheets/TR/W3C-REC.css" media="all" title="W3C-REC"/>
-    <link rel="stylesheet" href="media/css/lr.css" media="all"/>
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="scripts/html.sortable.min.js"></script>
-    <style>
-        body {
-            background-color: #fff;
-            background-image:
-            linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-            linear-gradient(#eee .1em, transparent .1em);
-            background-size: 100% 1.2em;
-        }
-    </style>
-    <script src="scripts/lr.js"></script>
+    <body about="" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: http://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# schema: https://schema.org/ rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: http://www.w3.org/ns/activitystreams# sterms: http://www.w3.org/ns/solid/terms#" typeof="schema:CreativeWork sioc:Post prov:Entity">
+        <main>
+            <article about="" typeof="schema:ScholarlyArticle">
+                <h1 property="schema:name">Adaptive Linked Data-driven Web Components: Building Flexible and Reusable Semantic Web Interfaces</h1>
 
-</head>
+                <div id="authors">
+                    <dl id="author-name">
+                        <dt>Authors</dt>
+                        <dd id="author-1">
+                            <span about="" rel="schema:creator schema:publisher schema:contributor schema:author"><a about="http://research.ld-r.org/#i" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://ali1k.com">Ali Khalili</a></span><sup><a about="http://research.ld-r.org/#i" href="#author-org-1" rel="schema:memberOf" resource="dbr:VU_University_Amsterdam">1</a></sup><sup><a href="#author-email-1">@1</a></sup></dd>
+                        <dd id="author-2">
+                            <span about="" rel="schema:creator schema:publisher schema:contributor schema:author"><a about="http://research.ld-r.org/#i" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://www.few.vu.nl/~alu900/">Antonis Loizou</a></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-email-2">@2</a></sup></dd>
+                        <dd id="author-3">
+                            <span about="" rel="schema:creator schema:publisher schema:contributor schema:author"><a about="http://research.ld-r.org/#i" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://www.cs.vu.nl/~frank.van.harmelen/">Frank van Harmelen</a></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-email-3">@3</a></sup></dd>
+                    </dl>
 
-<body about="[this:]" typeof="schema:CreativeWork sioc:Post schema:ScholarlyArticle prov:Entity" class="h-feed" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: http://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# schema: http://schema.org/ rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ sro: http://salt.semanticauthoring.org/ontologies/sro# this: http://research.ld-r.org/adaptive-linked-data-driven-web-components">
-    <article class="h-entry">
+                    <ul id="author-org">
+                        <li id="author-org-1"><sup>1</sup><a about="dbr:VU_University_Amsterdam" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://vu.nl/">Vrije Universiteit Amsterdam</a>, Dept. of Computer Science, Amsterdam, Netherlands</li>
+                    </ul>
 
-        <h1 class="p-name" property="schema:name">Adaptive Linked Data-driven Web Components: Building Flexible and Reusable Semantic Web Interfaces</h1>
+                    <ul id="author-email">
+                        <li id="author-email-1"><sup>@1</sup><a about="http://research.ld-r.org/#i" rel="schema:email" href="mailto:a.khalili@vu.nl">a.khalili@vu.nl</a></li>
+                        <li id="author-email-2"><sup>@2</sup><a about="http://research.ld-r.org/#i" rel="schema:email" href="mailto:a.loizou@vu.nl">a.loizou@vu.nl</a></li>
+                        <li id="author-email-3"><sup>@3</sup><a about="http://research.ld-r.org/#i" rel="schema:email" href="mailto:frank.van.harmelen@vu.nl">frank.van.harmelen@vu.nl</a></li>
+                    </ul>
+                </div>
 
-        <div id="authors">
-            <dl id="author-name">
-                <dt>Authors</dt>
-                <dd id="author-1">
-                    <span about="[this:]" rel="schema:creator schema:publisher schema:contributor schema:author"><a about="http://research.ld-r.org/#i" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://ali1k.com">Ali Khalili</a></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-email-1">@1</a></sup></dd>
-                <dd id="author-2">
-                    <span about="[this:]" rel="schema:creator schema:publisher schema:contributor schema:author"><a about="http://research.ld-r.org/#i" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://www.few.vu.nl/~alu900/">Antonis Loizou</a></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-email-2">@2</a></sup></dd>
-                <dd id="author-3">
-                    <span about="[this:]" rel="schema:creator schema:publisher schema:contributor schema:author"><a about="http://research.ld-r.org/#i" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://www.cs.vu.nl/~frank.van.harmelen/">Frank van Harmelen</a></span><sup><a href="#author-org-1">1</a></sup><sup><a href="#author-email-3">@3</a></sup></dd>
-            </dl>
+                <dl id="document-identifier">
+                    <dt>Document ID</dt>
+                    <dd><a href="http://research.ld-r.org/adaptive-linked-data-driven-web-components">http://research.ld-r.org/adaptive-linked-data-driven-web-components</a></dd>
+                </dl>
 
-            <ul id="author-org">
-                <li id="author-org-1"><sup>1</sup><a about="[dbr:VU_University_Amsterdam]" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://vu.nl/">VU University Amsterdam</a>, Dept. of Computer Science, Amsterdam, Netherlands</li>
-            </ul>
+                <dl id="document-published">
+                    <dt>Published</dt>
+                    <dd>
+                        <time datetime="2015-10-14" property="schema:datePublished" content="2015-10-14T00:00:00Z" datatype="xsd:dateTime">2015-10-14</time>
+                    </dd>
+                </dl>
 
-            <ul id="author-email">
-                <li id="author-email-1"><sup>@1</sup><a about="http://research.ld-r.org/#i" rel="schema:email" href="mailto:a.khalili@vu.nl">a.khalili@vu.nl</a></li>
-                <li id="author-email-2"><sup>@2</sup><a about="http://research.ld-r.org/#i" rel="schema:email" href="mailto:a.loizou@vu.nl">a.loizou@vu.nl</a></li>
-                <li id="author-email-3"><sup>@3</sup><a about="http://research.ld-r.org/#i" rel="schema:email" href="mailto:frank.van.harmelen@vu.nl">frank.van.harmelen@vu.nl</a></li>
-            </ul>
-            <span about="http://research.ld-r.org/#i" rel="schema:memberOf" resource="[dbr:VU_University_Amsterdam]"></span>
-        </div>
+                <dl id="document-modified">
+                    <dt>Modified</dt>
+                    <dd>
+                        <time datetime="2015-10-14" property="schema:dateModified" content="2015-10-14T00:00:00Z" datatype="xsd:dateTime">2015-10-14</time>
+                    </dd>
+                </dl>
 
-        <dl id="document-identifier">
-            <dt>Document ID</dt>
-            <dd><a href="http://research.ld-r.org/adaptive-linked-data-driven-web-components">http://research.ld-r.org/adaptive-linked-data-driven-web-components</a></dd>
-        </dl>
+                <dl id="document-license">
+                    <dt>License</dt>
+                    <dd><a about="" rel="schema:license" href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike 4.0 Unported">CC BY-SA 4.0</a></dd>
+                </dl>
 
-        <dl id="document-published">
-            <dt>Published</dt>
-            <dd>
-                <time datetime="2015-10-14" property="schema:datePublished" content="2015-10-14T00:00:00Z" datatype="xsd:dateTime">2015-10-14</time>
-            </dd>
-        </dl>
-
-        <dl id="document-modified">
-            <dt>Modified</dt>
-            <dd>
-                <time datetime="2015-10-14" property="schema:dateModified" content="2015-10-14T00:00:00Z" datatype="xsd:dateTime">2015-10-14</time>
-            </dd>
-        </dl>
-
-        <dl id="document-license">
-            <dt>License</dt>
-            <dd><a about="[this:]" rel="license schema:license" href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike 4.0 Unported">CC BY-SA 4.0</a></dd>
-        </dl>
-
-        <div id="content" class="e-content">
-            <section id="abstract" about="[this:]">
+        <div id="content">
+            <section id="abstract">
                 <h2>Abstract</h2>
-                <div property="schema:abstract" class="p-summary">
+                <div property="schema:abstract" datatype="rdf:HTML">
                     <p>
                         Due to the increasing amount of Linked Data openly published on the Web, user-facing Linked Data Applications (LDAs) are gaining momentum.
                         One of the major entrance barriers for Web developers to contribute to this wave of LDAs is the required knowledge of Semantic Web technologies such as the RDF data model and SPARQL query language.
@@ -101,7 +103,7 @@
                 </div>
             </section>
 
-            <section id="keywords" about="[this:]">
+            <section id="keywords" about="">
                 <h2>Keywords</h2>
                 <div>
                     <ul rel="schema:about">
@@ -113,7 +115,7 @@
                 </div>
             </section>
 
-            <section id="categories-and-subject-descriptors" about="[this:]">
+            <section id="categories-and-subject-descriptors" about="">
                 <h2>Categories and Subject Descriptors</h2>
                 <div>
                     <ul rel="schema:about">
@@ -127,9 +129,9 @@
                 </div>
             </section>
 
-            <section id="prologue" about="[this:]" rel="schema:hasPart" resource="[this:#prologue]">
-                <h2 about="[this:#prologue]" property="schema:name">Introduction</h2>
-                <div about="[this:#prologue]" property="schema:description" typeof="deo:Prologue">
+            <section id="prologue" about="" rel="schema:hasPart" resource="#prologue">
+                <h2 about="#prologue" property="schema:name">Introduction</h2>
+                <div about="#prologue" property="schema:description" typeof="deo:Prologue">
                     <p>
                         With the growing number of structured data published, the Web is moving towards becoming a rich ecosystem of machine-understandable Linked Data (15.10.2015: <a href="http://lodlaundromat.org">lodlaundromat.org</a> reported
                         approx. 38.6 billion triples published on the Web). Semantically structured data facilitates a number of important aspects of information management such as information retrieval, search, visualization, customization, personalization
@@ -144,8 +146,8 @@
                     </p>
                     <p>
                         This paper presents adaptive Linked Data-driven Web components as an approach to build flexible and reusable Semantic Web UIs.
-                        <i>Web Components</i> are a set of W3C standards[<a href="#webcomponentsW3C">5</a>] that enable the creation of custom, reusable user interface widgets or components in Web documents and Web applications.
-                        The <i>Resource Description Framework</i> (RDF), on the other hand, provides a common data model that allows data-driven components to be created, shared and integrated in a structured way across different applications. Linked Data-driven
+                        <em>Web Components</em> are a set of W3C standards[<a href="#webcomponentsW3C">5</a>] that enable the creation of custom, reusable user interface widgets or components in Web documents and Web applications.
+                        The <em>Resource Description Framework</em> (RDF), on the other hand, provides a common data model that allows data-driven components to be created, shared and integrated in a structured way across different applications. Linked Data-driven
                         (LD-R) Web components as defined in this paper are a species of Web components that employ the RDF data model for representing their content and specification (i.e. metadata about the component). LD-R components are supported by
                         a set of predefined core Web components, each representing a compartment of the RDF data model on the Web UI. Thus, the Semantic Web nature of an LDA can be encapsulated in LD-R components thereby, allowing UX designers and Web
                         developers outside the Semantic Web community to contribute to LDAs. The components also provide current Semantic Web developers with a mechanism to reuse existing Web components in their LDAs. Furthermore, LD-R components exploit
@@ -155,32 +157,32 @@
                         The LD-R approach offers many benefits that we will describe in the remainder of the paper. Among them are:
                         <ul>
                             <li>
-                                <i>Bootstrapping LDA UIs</i>. LD-R components exploit best practices from modern Web application development to bring an exhaustive architecture to perform separation of concerns and thereby bootstrapping an LDA by only
+                                <em>Bootstrapping LDA UIs</em>. LD-R components exploit best practices from modern Web application development to bring an exhaustive architecture to perform separation of concerns and thereby bootstrapping an LDA by only
                                 selecting a minimal relevant configuration. For example, a developer only needs to set the URL of his in-use SPARQL endpoint and start developing the viewer components without dealing with the underlying connection adapters
                                 and data flow mediators in the system.
                             </li>
                             <li>
-                                <i>Standardization and Reusability of LDA UIs</i>. Instead of creating an LDA UI from scratch, in the component-based development of LDA UIs, application assemblers choose from a set of standard UIs which will reduce
+                                <em>Standardization and Reusability of LDA UIs</em>. Instead of creating an LDA UI from scratch, in the component-based development of LDA UIs, application assemblers choose from a set of standard UIs which will reduce
                                 the time and costs associated with the creation of LDAs. For example, to render DBpedia resources of type "Location", a standard map can be reused.
                             </li>
                             <li>
-                                <i>Customization and Personalization of LDA UIs</i>. The RDF-based nature of LD-R components allow application assemblers to reshape their user interface based on the meaning of data or user context. For example, for all
+                                <em>Customization and Personalization of LDA UIs</em>. The RDF-based nature of LD-R components allow application assemblers to reshape their user interface based on the meaning of data or user context. For example, for all
                                 the resources of type foaf:Person, the content can be rendered with a "ContactCard" component.
                             </li>
                             <li>
-                                <i>Adoption of LDA UIs by non-Semantic Web developers and end-users</i>. Most of the current Linked Data interfaces fall into the <i>Pathetic Fallacy of RDF</i>[<a href="#Karger2006">10</a>] where they display RDF data to the users as a
-                                graph because the underlying data model is a graph. Abstracting the complexity of RDF and graph-based data representation provides more <i>Affordances</i>[<a href="#Norman2013">17</a>] for non-Semantic Web users to contribute to Linked Data UIs.
+                                <em>Adoption of LDA UIs by non-Semantic Web developers and end-users</em>. Most of the current Linked Data interfaces fall into the <em>Pathetic Fallacy of RDF</em>[<a href="#Karger2006">10</a>] where they display RDF data to the users as a
+                                graph because the underlying data model is a graph. Abstracting the complexity of RDF and graph-based data representation provides more <em>Affordances</em>[<a href="#Norman2013">17</a>] for non-Semantic Web users to contribute to Linked Data UIs.
                                     Engaging more UX designers and Web developers into LDA UIs will also result in more affordances on the end-user's side to better understand the possible actions and advantages of the LDAs.
                                 </li>
                             </ul>
                         </p>
                     </div>
                 </section>
-                <section id="contributions" about="[this:]" rel="schema:hasPart" resource="[this:#contributions]">
-                    <h2 about="[this:#contributions]" property="schema:name">Contributions and Outline</h2>
-                    <div about="[this:#contributions]" property="schema:description">
+                <section id="contributions" about="" rel="schema:hasPart" resource="#contributions">
+                    <h2 about="#contributions" property="schema:name">Contributions and Outline</h2>
+                    <div about="#contributions" property="schema:description" datatype="rdf:HTML">
                         <p>
-                            The contributions of this work are the concept of <i>Adaptive LD-R Web components</i> and an open source implementation of it available at <a href="http://ld-r.org">http://ld-r.org</a>.
+                            The contributions of this work are the concept of <em>Adaptive LD-R Web components</em> and an open source implementation of it available at <a href="http://ld-r.org">http://ld-r.org</a>.
                             Our primary claim is that adopting a component-based approach that encapsulates the main concerns of a Semantic Web application, paves the way to reusing existing best practices from the UX community within the LDAs hence building more usable and pervasive LDAs.
                             We also present that combining the LD-R components with LD-R scopes and configurations allows application assemblers to provide a high level of flexibility in their LDA UIs.
                     </p>
@@ -192,9 +194,9 @@
                     </p>
                 </div>
             </section>
-            <section id="currentStatus" about="[this:]" rel="schema:hasPart" resource="[this:#currentStatus]">
-                <h2 about="[this:#currentStatus]" property="schema:name">The Current Status of Linked Data User Interface Development</h2>
-                <div about="[this:#currentStatus]" property="schema:description">
+            <section id="currentStatus" about="" rel="schema:hasPart" resource="#currentStatus">
+                <h2 about="#currentStatus" property="schema:name">The Current Status of Linked Data User Interface Development</h2>
+                <div about="#currentStatus" property="schema:description" datatype="rdf:HTML">
                     <p>
                         In order to understand the current pitfalls of LDA UI design, we conducted a survey targeting
                         active Semantic Web developers (check <a href="https://goo.gl/cltqhv">results</a>).
@@ -224,18 +226,18 @@
                         In addition to their development experience, developers were asked about their knowledge of Semantic Web to compare their practical and conceptual experience.
                         As results revealed, the majority of participants (63%) had proficient (4-5 years) and expert (more than 5 years) knowledge of Semantic Web and Linked Data which makes a good sample for our evaluation.
                     </p>
-<br/>
+
                     <p>
                     Questions addressed the following topics:
                     </p>
                     <ul>
                         <li>
-                            <i>Amount of time spent on bootstrapping LDA UIs</i>.
+                            <em>Amount of time spent on bootstrapping LDA UIs</em>.
                             Before designing the UIs in an LDA, developers need to spend some time on creating the skeleton of their application where querying data and the business logic of the application is handled.
                             The results confirm that developers spend a lot of time (on average more than 2 days) on bootstrapping their LDAs before they can start working on the UI.
                         </li>
                         <li>
-                            <i>Reuse of code by Semantic Web developers</i>.
+                            <em>Reuse of code by Semantic Web developers</em>.
                             Developers usually reuse sections of code, templates, functions, and objects to save time and resources when developing LDAs.
                             We asked participants about two types of reuse: reuse by copy/pasting code from existing LDAs and reuse by employing current Web components.
                             Reuse by copy/pasting code can be seen as an indicator of the state of standardization, modularity and reusability of current LDAs.
@@ -246,13 +248,13 @@
                             Interestingly, the majority of participants (49%) were already reusing other component-like libraries which shows an attitude and capacity towards adopting the Web components.
                         </li>
                         <li>
-                            <i>Adaptation of LDA UIs</i>.
+                            <em>Adaptation of LDA UIs</em>.
                             Most of the modern Web applications provide a mechanism to customize and personalize their user interfaces based on the type of data and the information needs of their end-users.
                             Proactive user interface adaptation allows the application to act more like a human and consequently, more intelligently[<a href="#adaptiveSW2011">9</a>].
                             As our study shows, within the current LDA developers, 52% had experience adapting the user interface of their applications frequently. There were also 32% that were doing the UI adaptation but not frequently.
                         </li>
                         <li>
-                            <i>Adoption issues with non-Semantic Web developers</i>.
+                            <em>Adoption issues with non-Semantic Web developers</em>.
                             In order to examine if there is a communication gap between UI designers and Semantic Web developers, we asked the participants about their experience when collaborating with a non-SW developer.
                             Among the participants, 51% had communication issues with non-Semantic Web developers to familiarize them with Semantic Web concepts before they can start contributing to the application.
                             The distribution of this issue among more experienced developers (57% of the intermediate and advanced users) further emphasizes the importance of this communication gap.
@@ -261,9 +263,9 @@
                 </div>
             </section>
 
-            <section id="adaptiveLDRWC" about="[this:]" rel="schema:hasPart" resource="[this:#adaptiveLDRWC]">
-                <h3 about="[this:#adaptiveLDRWC]" property="schema:name">Adaptive Linked Data-driven Web Components</h3>
-                <div about="[this:#adaptiveLDRWC]" property="schema:description">
+            <section id="adaptiveLDRWC" about="" rel="schema:hasPart" resource="#adaptiveLDRWC">
+                <h3 about="#adaptiveLDRWC" property="schema:name">Adaptive Linked Data-driven Web Components</h3>
+                <div about="#adaptiveLDRWC" property="schema:description" datatype="rdf:HTML">
                     <p>
                         In order to streamline the process of UI development in LDAs, we propose an architecture of adaptive LD-R Web components -- Web components enriched by the RDF data model.
                         As shown in <a href="#fig_framework">Figure 2</a>, the proposed architecture addresses LDA UI reusability and flexibility by incorporating RDF-based Web components and scopes.
@@ -278,13 +280,13 @@
                         <figcaption style="text-align:center;">Main elements of the adaptive LD-R Web components architecture.</figcaption>
                     </figure>
 
-                    <section id="ldrWC" about="[this:#adaptiveLDRWC]" rel="schema:hasPart" resource="[this:#ldrWC]">
-                        <h3 about="[this:#ldrWC]" property="schema:name">LD-R Web Components</h2>
+                    <section id="ldrWC" about="#adaptiveLDRWC" rel="schema:hasPart" resource="#ldrWC">
+                        <h3 about="#ldrWC" property="schema:name">LD-R Web Components</h3>
                             <p>
                                 As depicted in <a href="#fig_architecture">Figure 3</a>, there are four core component levels in an LD-R Web application.
                                 Each core component abstracts the actions required for retrieving and updating the graph-based data and provides a basis for user-defined components to interact with Linked Data in three modes: view, edit and browse.
                             </p>
-                            <div about="[this:#ldrWC]" property="schema:description">
+                            <div about="#ldrWC" property="schema:description" datatype="rdf:HTML">
                                 <figure id="fig_architecture">
                                     <div style="text-align:center;">
                                         <a href="pdf/architecture.pdf">
@@ -295,21 +297,21 @@
                                 </figure>
                             </div>
                             <p>
-                                The data-flow in the system starts from the <i>Dataset</i> component which handles all the events related to a set of resources under a named graph identified by a URI.
-                                The next level is the <i>Resource</i> component which is identified by a URI and indicates what is described in the application.
-                                A resource is described by a set of properties which are handled by the <i>Property</i> component.
+                                The data-flow in the system starts from the <em>Dataset</em> component which handles all the events related to a set of resources under a named graph identified by a URI.
+                                The next level is the <em>Resource</em> component which is identified by a URI and indicates what is described in the application.
+                                A resource is described by a set of properties which are handled by the <em>Property</em> component.
                                 Properties can be either individual or aggregate when combining multiple features of a resource (e.g. a component that combines longitude and latitude properties; start date and end date properties for a date range, etc.).
                                 Each property is instantiated by an individual value or multiple values in case of an aggregate object.
-                                The value(s) of properties are controlled by the <i>Value</i> component.
+                                The value(s) of properties are controlled by the <em>Value</em> component.
                                 In turn, Value components invoke different components to view, edit and browse the property values.
-                                <i>Viewer</i>, <i>Editor</i> and <i>Browser</i> components are terminals in the LD-R single directional data flow where customized user-generated components can be plugged into the system.
+                                <em>Viewer</em>, <em>Editor</em> and <em>Browser</em> components are terminals in the LD-R single directional data flow where customized user-generated components can be plugged into the system.
                                 User interactions with the LD-R components are controlled by a set of configurations defined on one or more selected component levels known as scopes.
                             </p>
                     </section>
 
-                    <section id="scopes" about="[this:#adaptiveLDRWC]" rel="schema:hasPart" resource="[this:#scopes]">
-                        <h3 about="[this:#scopes]" property="schema:name">Scopes and Configurations</h2>
-                            <div about="[this:#scopes]" property="schema:description">
+                    <section id="scopes" about="#adaptiveLDRWC" rel="schema:hasPart" resource="#scopes">
+                        <h3 about="#scopes" property="schema:name">Scopes and Configurations</h3>
+                            <div about="#scopes" property="schema:description" datatype="rdf:HTML">
 
                                 <figure id="fig_scopes">
                                     <div style="text-align:center;">
@@ -322,7 +324,7 @@
                                 <p>
                                     LD-R Web components provide a versatile approach for context adaptation.
                                     A context can be a specific domain of interest, a specific user requirement or both.
-                                    In order to enable customization and personalization, the LD-R approach exploits the concepts of <i>Scope</i> and <i>Configuration</i>.
+                                    In order to enable customization and personalization, the LD-R approach exploits the concepts of <em>Scope</em> and <em>Configuration</em>.
                                     A scope is defined as a hierarchical permutation of Dataset, Resource, Property and Value components (cf. <a href="#fig_scopes">Figure 4</a>).
                                     Each scope conveys a certain level of specificity on a given context ranging from 1 (most specific) to 15 (least specific).
                                     Scopes are defined by using either the URIs of named graphs, resources and properties, or by identifying the resource types and data types.
@@ -332,15 +334,15 @@
                                 </p>
                                 <figure id="fig_algorithm" class="listing">
                                         <pre>
-                                            <code>InitialConfig = {initial application configuration}</code>
-                                            <code>Context = [array of scopes with the corresponding configuration</code> objects]
-                                            <code>Config = InitialConfig</code>
-                                            <code>for (i = 15; i < 1; i--) {</code>
-                                                <code>Config.compareWith(Context[i]) {</code>
-                                                <code>    Config.addMissingAttributes()</code>
-                                                <code>    Config.overwriteExistingAttributes()</code>
-                                                <code>}</code>
-                                            <code>}</code>
+<code>InitialConfig = {initial application configuration}</code>
+<code>Context = [array of scopes with the corresponding configuration</code> objects]
+<code>Config = InitialConfig</code>
+<code>for (i = 15; i &lt; 1; i--) {</code>
+    <code>Config.compareWith(Context[i]) {</code>
+    <code>    Config.addMissingAttributes()</code>
+    <code>    Config.overwriteExistingAttributes()</code>
+    <code>}</code>
+<code>}</code>
                                         </pre>
                                     <figcaption style="text-align:center;">Algorithm for the LD-R UI adaptation.</figcaption>
                                 </figure>
@@ -412,12 +414,12 @@
                             </div>
                     </section>
 
-                    <section id="semanticMarkup" about="[this:#adaptiveLDRWC]" rel="schema:hasPart" resource="[this:#semanticMarkup]">
-                        <h3 about="[this:#semanticMarkup]" property="schema:name">Semantic Markup for Web Components</h2>
-                            <div about="[this:#semanticMarkup]" property="schema:description">
+                    <section id="semanticMarkup" about="#adaptiveLDRWC" rel="schema:hasPart" resource="#semanticMarkup">
+                        <h3 about="#semanticMarkup" property="schema:name">Semantic Markup for Web Components</h3>
+                            <div about="#semanticMarkup" property="schema:description" datatype="rdf:HTML">
                                 <p>
                                     The innate support of RDF in LD-R Web components enable the automatic creation of semantic markup on the UI level.
-                                    Lower semantic techniques such as <i><a href="http://www.w3.org/TR/rdfa-syntax/">RDFa</a></i>, <i><a href="http://www.w3.org/TR/microdata/">Microdata</a></i> and <i><a href="http://www.w3.org/TR/json-ld/">JSON-LD</a></i> can be incorporated in the core LD-R components to expose structured data to current search engines which are capable of parsing semantic markup.
+                                    Lower semantic techniques such as <em><a href="http://www.w3.org/TR/rdfa-syntax/">RDFa</a></em>, <em><a href="http://www.w3.org/TR/microdata/">Microdata</a></em> and <em><a href="http://www.w3.org/TR/json-ld/">JSON-LD</a></em> can be incorporated in the core LD-R components to expose structured data to current search engines which are capable of parsing semantic markup.
                                     For example, an LD-R component created based on the <a href="http://www.heppnetz.de/projects/goodrelations/">Good Relations</a> or <a href="http://schema.org">Schema.org</a> ontologies, can automatically expose the product data as <a href="https://developers.google.com/structured-data/">Google Rich Snippets</a> for products which will provide better visibility of the data on Web search results (i.e. SEO).
                                 </p>
                                 <p>
@@ -438,9 +440,9 @@
                             </div>
                     </section>
 
-                    <section id="stackeholders" about="[this:#adaptiveLDRWC]" rel="schema:hasPart" resource="[this:#stackeholders]">
-                        <h3 about="[this:#stackeholders]" property="schema:name">Stackeholders and Life Cycle</h2>
-                            <div about="[this:#stackeholders]" property="schema:description">
+                    <section id="stackeholders" about="#adaptiveLDRWC" rel="schema:hasPart" resource="#stackeholders">
+                        <h3 about="#stackeholders" property="schema:name">Stackeholders and Life Cycle</h3>
+                            <div about="#stackeholders" property="schema:description" datatype="rdf:HTML">
                                 <figure id="fig_lifecycle">
                                     <div style="text-align:center;">
                                         <a href="pdf/lifecycle.pdf">
@@ -454,30 +456,30 @@
                                 </p>
                                 <ul>
                                     <li>
-                                        <i>Linked Data Provider</i>.
+                                        <em>Linked Data Provider</em>.
                                         Since the LD-R approach focuses mainly on Linked Data applications, the provision of RDF-compliant data is an essential phase in developing the LD-R components.
                                         There are different stages[<a href="#AuerLOD2">1</a>] in Linked Data provision, including data extraction, storage, interlinking, enrichment, quality analysis and repair which should be taken into account by data scientists and Linked Data experts.
                                         Once the data and schemata are provided to the LD-R component system, the system can bring a reciprocal value to Linked Data providers to better understand and curate the data when needed.
                                         For example, in the case of geo-coordinates, a map component can enable data providers to easily curate the outlier data (e.g. ambiguous entities) within a certain geo boundary in a visual manner.
                                     </li>
                                     <li>
-                                        <i>Component Developer</i>.
+                                        <em>Component Developer</em>.
                                         Component developers are UX designers and Web programmers who are involved in component fabrication.
                                         There are two types of Web components developed in this step:
                                         a) <a href="#fig_architecture">Core components</a> which abstract the underlying RDF data model.
                                         These components are built-in to the system, however can still be overwritten by developers who have proficiency in Semantic Web and Linked Data.
-                                        b) <i>Community-driven components</i> which exploit the core components.
+                                        b) <em>Community-driven components</em> which exploit the core components.
                                         These components are either created from the scratch or by remixing and repurposing existing Web components found on the Web.
                                     </li>
                                     <li>
-                                        <i>Application Assembler</i>.
+                                        <em>Application Assembler</em>.
                                         The main task of application assemblers is to identify the right components and configurations for the application; and to combine them in a way which fits the application requirements.
                                         Within the LD-R component system, the metadata provided by each Web component facilitates the discovery of relevant components.
                                         Having shared vocabularies on Linked Open Data allows assemblers to not only reuse components but also reuse the existing configurations and scopes published on the Web.
                                         For example, if there is already a suitable configuration for <code>RP</code> scope which uses <code>foaf:Person</code> as resource type and <code>dcterms:description</code> as property URI, the assembler can reuse that configuration within his application.
                                     </li>
                                     <li>
-                                        <i>End-User</i>.
+                                        <em>End-User</em>.
                                         End-users experience working with the components to pursue goals in a certain application domain.
                                         As such, they may request the development of new components or configurations in order to fulfil their requirements and are expected to provide feedback on existing components.
                                     </li>
@@ -486,13 +488,13 @@
                     </section>
                 </div>
             </section>
-            <section id="implementation" about="[this:]" rel="schema:hasPart" resource="[this:#implementation]">
-                <h2 about="[this:#implementation]" property="schema:name">Implementation</h2>
-                <div about="[this:#implementation]" property="schema:description">
+            <section id="implementation" about="" rel="schema:hasPart" resource="#implementation">
+                <h2 about="#implementation" property="schema:name">Implementation</h2>
+                <div about="#implementation" property="schema:description" datatype="rdf:HTML">
                     <p>
-                        In order to realize the idea of adaptive Linked Data-driven Web components, we implemented an open-source software framework called <i>Linked Data Reactor (LD-Reactor)</i> which is available online at <a href="http://ld-r.org">http://ld-r.org</a>.
+                        In order to realize the idea of adaptive Linked Data-driven Web components, we implemented an open-source software framework called <em>Linked Data Reactor (LD-Reactor)</em> which is available online at <a href="http://ld-r.org">http://ld-r.org</a>.
                         LD-Reactor utilizes Facebook's <a href="https://facebook.github.io/react/">ReactJS</a> components, the <a href="https://facebook.github.io/flux">Flux</a> architecture, Yahoo!'s <a href="http://fluxible.io/">Fluxible</a> framework for isomorphic Web applications (i.e. running the components code both on the server and the client) and the <a href="http://semantic-ui.com/">Semantic-UI</a> framework for flexible UI themes.
-                        The main reasons we chose <i>React</i> components over other  Web Components solutions (e.g. <a href="http://www.polymer-project.org/">Polymer</a>, <a href="https://angularjs.org/">AngularJS</a>, <a href="http://emberjs.com/">EmberJS</a>, etc.) were the maturity and maintainability of the technology, the native multi-platform support, the number of developer tools/components/applications, and the efficiency of its underlying virtual DOM approach.
+                        The main reasons we chose <em>React</em> components over other  Web Components solutions (e.g. <a href="http://www.polymer-project.org/">Polymer</a>, <a href="https://angularjs.org/">AngularJS</a>, <a href="http://emberjs.com/">EmberJS</a>, etc.) were the maturity and maintainability of the technology, the native multi-platform support, the number of developer tools/components/applications, and the efficiency of its underlying virtual DOM approach.
                     </p>
                     <figure id="fig_dataflow">
                         <div style="text-align:center;">
@@ -515,7 +517,7 @@
                             A set of RESTful Web services that allow basic CRUD operations on Linked Data using SPARQL queries (* the framework is compliant with the SPARQL 1.1 standard. However, we have identified certain inconsistencies between OpenRDF Sesame and OpenLink Virtuoso RDF stores, which did not allow the execution of syntactically identical queries across both systems. Thereby, specific adaptors have been implemented for each of these two RDF stores.).
                         </li>
                         <li>
-                            A set of core components called <i>Reactors</i> which implement core Linked Data components together with their corresponding actions and stores.
+                            A set of core components called <em>Reactors</em> which implement core Linked Data components together with their corresponding actions and stores.
                         </li>
                         <li>
                             A set of default components which allow basic viewing, editing and browsing of Linked Data.
@@ -528,12 +530,12 @@
                         </li>
                     </ul>
                     <p>
-                        LD-Reactor implementation is compliant with <i>Microservices Architecture</i> [<a href="#microservices">13</a>] where the existing ReactJS components can be extended by complementary Linked Data services.
+                        LD-Reactor implementation is compliant with <em>Microservices Architecture</em> [<a href="#microservices">13</a>] where the existing ReactJS components can be extended by complementary Linked Data services.
                         In contrast to the centralized monolithic architecture, the microservices architecture, allows plcaing the main functionalities of the LDA into separate decoupled services and scale by distributing these services across servers, replicating as needed.
                         This architectural style also helps to minimize the redeploying of the entire application when changes in components were requested.
                     </p>
                     <p>
-                        There are three modes of interactions within LD-R components namely <i>view</i>, <i>browse</i> and <i>edit</i>.
+                        There are three modes of interactions within LD-R components namely <em>view</em>, <em>browse</em> and <em>edit</em>.
                         These modes work with two types of value granularity: individual and aggregate.
                         As shown in <a href="#fig_viewedit"> Figure 9</a>, components can target individual values or interact with aggregate values when users want to show/update multiple values at once.
                         <a href="#fig_facets">Figure 10</a> depicts the browse mode where individual (e.g. item lists with check boxes) and aggregate data browser (e.g. data sliders or maps) components can be employed.
@@ -560,15 +562,15 @@
                     </p>
                 </div>
             </section>
-            <section id="useCases" about="[this:]" rel="schema:hasPart" resource="[this:#useCases]">
-                <h2 about="[this:#useCases]" property="schema:name">Use Cases</h2>
-                <div about="[this:#useCases]" property="schema:description">
+            <section id="useCases" about="" rel="schema:hasPart" resource="#useCases">
+                <h2 about="#useCases" property="schema:name">Use Cases</h2>
+                <div about="#useCases" property="schema:description" datatype="rdf:HTML">
                     <p>
                         The LD-Reactor framework is already in use within the <a href="http://risis.eu">RISIS</a> and <a href="http://www.openphacts.org">Open PHACTS</a> projects.
                     </p>
-                    <section id="risis" about="[this:#useCases]" rel="schema:hasPart" resource="[this:#risis]">
-                        <h3 about="[this:#risis]" property="schema:name">RISIS</h3>
-                            <div about="[this:#risis]" property="schema:description">
+                    <section id="risis" about="#useCases" rel="schema:hasPart" resource="#risis">
+                        <h3 about="#risis" property="schema:name">RISIS</h3>
+                            <div about="#risis" property="schema:description" datatype="rdf:HTML">
                                 <p>
                                     The RISIS project aims to provide an infrastructure for research and innovation, targeting researchers from various science and technology domains.
                                     The LD-Reactor framework was utilized in RISIS to help data providers with no Linked Data experience to provide RDF metadata about their datasets (see <a href="http://sms.risis.eu">SMS Platform</a>). This metadata is then used to allow researchers to search, identify, and request access to the data they are interested in (see <a href="http://datasets.risis.eu">RISIS datasets portal</a>).
@@ -614,71 +616,71 @@
                                     </li>
                                 </ul>
                                 <p>
-                                    In accordance to the LD-Reactor microservices architecture, we built a <i>DBpediaGMap</i> viewer component where we reused the current <a href="http://github.com/tomchentw/react-google-maps">react-google-maps</a> together with DBpedia lookup and query services to retrieve the coordinates for the recognized DBpedia resource values.
+                                    In accordance to the LD-Reactor microservices architecture, we built a <em>DBpediaGMap</em> viewer component where we reused the current <a href="http://github.com/tomchentw/react-google-maps">react-google-maps</a> together with DBpedia lookup and query services to retrieve the coordinates for the recognized DBpedia resource values.
                                     <a href="#fig_risis">Figure 12</a> shows a screenshot of the generated UIs for metadata and search.
                                 </p>
 
                                 <figure id="fig_configCode"  class="listing">
                                         <pre>
-                                            resource: {
-                                                `generic': {
-                                                    usePropertyCategories: 1,
-                                                    propertyCategories: [`overview', `legalAspects', `technicalAspects'],
-                                                    resourceReactor: [`Resource'],
-                                                    shortenURI: 1
-                                                }
-                                            },
-                                            property: {
-                                                `generic': {
-                                                    propertyReactor: [`IndividualProperty'],
-                                                    objectReactor: [`IndividualObject'],
-                                                    objectIViewer: [`BasicIndividualView'],
-                                                    objectIEditor: [`BasicIndividualInput']
-                                                },
-                                                `http://purl.org/dc/terms/language': {
-                                                    allowNewValue: 1,
-                                                    label: [`Dataset Language'],
-                                                    category: [`overview'],
-                                                    hint: [`The language of the dataset. Resources defined by the Library of Congress (http://id.loc.gov/vocabulary/iso639-1.html, http://id.loc.gov/vocabulary/iso639-2.html) SHOULD be used.'],
-                                                    objectIViewer: [`LanguageView'],
-                                                    objectIEditor: [`LanguageInput'],
-                                                    defaultValue: [`http://id.loc.gov/vocabulary/iso639-1/en']
-                                                },
-                                                `http://purl.org/dc/terms/spatial': {
-                                                     label: [`Geographical coverage'],
-                                                     category: [`overview'],
-                                                     hint: [`The geographical area covered by the dataset.'],
-                                                     allowNewValue: 1,
-                                                     objectReactor: [`AggregateObject'],
-                                                     objectAViewer: [`DBpediaGoogleMapView'],
-                                                     objectIViewer: [`BasicDBpediaView'],
-                                                     asWikipedia: 1,
-                                                     objectAEditor: [`BasicAggregateInput'],
-                                                     objectIEditor: [`DBpediaInput'],
-                                                     lookupClass: [`Place']
-                                                 },
-                                                `http://purl.org/dc/terms/subject': {
-                                                    category: [`overview'],
-                                                    label: [`Keywords'],
-                                                    hint: [`Tags a dataset with a topic.'],
-                                                    allowNewValue: 1,
-                                                    objectIEditor: [`DBpediaInput'],
-                                                    objectIViewer: [`BasicDBpediaView'],
-                                                    asWikipedia: 1
-                                                },
-                                                `http://purl.org/dc/terms/license': {
-                                                    category: [`legalAspects'],
-                                                    label: [`License'],
-                                                    allowNewValue: 1,
-                                                    objectIViewer: [`BasicOptionView'],
-                                                    objectIEditor: [`BasicOptionInput'],
-                                                    options: [
-                                                        {label: `Open Data Commons Attribution License', value: `http://www.opendatacommons.org/licenses/by/'},
-                                                        {label: `Creative Commons Attribution-ShareAlike', value: `http://creativecommons.org/licenses/by-sa/3.0/'}
-                                                    ],
-                                                    allowUserDefinedValue: 1
-                                                }
-                                            }
+resource: {
+    `generic': {
+        usePropertyCategories: 1,
+        propertyCategories: [`overview', `legalAspects', `technicalAspects'],
+        resourceReactor: [`Resource'],
+        shortenURI: 1
+    }
+},
+property: {
+    `generic': {
+        propertyReactor: [`IndividualProperty'],
+        objectReactor: [`IndividualObject'],
+        objectIViewer: [`BasicIndividualView'],
+        objectIEditor: [`BasicIndividualInput']
+    },
+    `http://purl.org/dc/terms/language': {
+        allowNewValue: 1,
+        label: [`Dataset Language'],
+        category: [`overview'],
+        hint: [`The language of the dataset. Resources defined by the Library of Congress (http://id.loc.gov/vocabulary/iso639-1.html, http://id.loc.gov/vocabulary/iso639-2.html) SHOULD be used.'],
+        objectIViewer: [`LanguageView'],
+        objectIEditor: [`LanguageInput'],
+        defaultValue: [`http://id.loc.gov/vocabulary/iso639-1/en']
+    },
+    `http://purl.org/dc/terms/spatial': {
+         label: [`Geographical coverage'],
+         category: [`overview'],
+         hint: [`The geographical area covered by the dataset.'],
+         allowNewValue: 1,
+         objectReactor: [`AggregateObject'],
+         objectAViewer: [`DBpediaGoogleMapView'],
+         objectIViewer: [`BasicDBpediaView'],
+         asWikipedia: 1,
+         objectAEditor: [`BasicAggregateInput'],
+         objectIEditor: [`DBpediaInput'],
+         lookupClass: [`Place']
+     },
+    `http://purl.org/dc/terms/subject': {
+        category: [`overview'],
+        label: [`Keywords'],
+        hint: [`Tags a dataset with a topic.'],
+        allowNewValue: 1,
+        objectIEditor: [`DBpediaInput'],
+        objectIViewer: [`BasicDBpediaView'],
+        asWikipedia: 1
+    },
+    `http://purl.org/dc/terms/license': {
+        category: [`legalAspects'],
+        label: [`License'],
+        allowNewValue: 1,
+        objectIViewer: [`BasicOptionView'],
+        objectIEditor: [`BasicOptionInput'],
+        options: [
+            {label: `Open Data Commons Attribution License', value: `http://www.opendatacommons.org/licenses/by/'},
+            {label: `Creative Commons Attribution-ShareAlike', value: `http://creativecommons.org/licenses/by-sa/3.0/'}
+        ],
+        allowUserDefinedValue: 1
+    }
+}
                                         </pre>
                                     <figcaption style="text-align:center;">An excerpt of the LD-Reactor configuration for the RISIS metadata editor.</figcaption>
                                 </figure>
@@ -694,9 +696,9 @@
 
                             </div>
                     </section>
-                    <section id="openPHACTS" about="[this:#useCases]" rel="schema:hasPart" resource="[this:#openPHACTS]">
-                        <h3 about="[this:#openPHACTS]" property="schema:name">Open PHACTS</h2>
-                            <div about="[this:#openPHACTS]" property="schema:description">
+                    <section id="openPHACTS" about="#useCases" rel="schema:hasPart" resource="#openPHACTS">
+                        <h3 about="#openPHACTS" property="schema:name">Open PHACTS</h3>
+                            <div about="#openPHACTS" property="schema:description" datatype="rdf:HTML">
                                 <p>
                                     The Open PHACTS Discovery Platform has been developed to reduce barriers to drug discovery, by collecting and integrating a large number of prominent RDF datasets in the pharmacology domain. The platform provides a uniform RESTful API for application developers to access the integrated data.
                                     In collaboration with the data providers, the Open PHACTS consortium has created a comprehensive <a href="http://www.openphacts.org/specs/2013/WD-datadesc-20130912/">dataset description specification</a> based on the Vocabulary of Interlinked Datasets (<a href="http://www.w3.org/TR/void/">VoID</a>). The metadata provided in this context enables (among others) exposing the detailed provenance for each result produced by the platform, the location of source files for each dataset, and example resources.
@@ -744,9 +746,9 @@
                     </section>
                 </div>
             </section>
-            <section id="relatedWork" about="[this:]" rel="schema:hasPart" resource="[this:#relatedWork]">
-                <h2 about="[this:#relatedWork]" property="schema:name">Related Work</h2>
-                <div about="[this:#relatedWork]" property="schema:description">
+            <section id="relatedWork" about="" rel="schema:hasPart" resource="#relatedWork">
+                <h2 property="schema:name">Related Work</h2>
+                <div property="schema:description" datatype="rdf:HTML">
                     <p>
                         Component-based software engineering (CBSE) has been an active research area since 1987 with numerous results published in the research literature[<a href="#Vale2015">23</a>].
                         Within the Semantic Web community, the main focus has been on enriching current service-oriented architectures (SOAs) with semantic formalisms and thereby providing Semantic Web services as reusable and scalable software components[<a href="#sws2015">24</a>].
@@ -782,9 +784,9 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     </p>
                 </div>
             </section>
-            <section id="conclusions" about="[this:]" rel="schema:hasPart" resource="[this:#conclusions]">
-                <h2 about="[this:#conclusions]" property="schema:name">Conclusion and Future Work</h2>
-                <div about="[this:#conclusions]" property="schema:description">
+            <section id="conclusions" inlist="" rel="schema:hasPart" resource="#conclusions">
+                <h2 about="#conclusions" property="schema:name" typeof="deo:Conclusion">Conclusions</h2>
+                <div datatype="rdf:HTML" property="schema:description">
                     <p>
                         This paper presented adaptive Linked Data-driven Web components as a solution to increase the usability of current Linked Data applications.
                         The proposed component-based solution emphasizes the reusability and separation of concerns in respect to developing Linked Data applications.
@@ -803,9 +805,9 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     </p>
                 </div>
             </section>
-            <section id="aknowledgement" about="[this:]" rel="schema:hasPart" resource="[this:#aknowledgement]">
-                <h2 about="[this:#aknowledgement]" property="schema:name">Aknowledgement</h2>
-                <div about="[this:#aknowledgement]" property="schema:description">
+            <section id="acknowledgements" inlist="" rel="schema:hasPart" resource="#acknowledgements">
+                <h2 property="schema:name">Acknowledgements</h2>
+                <div about="#acknowledgements" datatype="rdf:HTML" property="schema:description" typeof="deo:Acknowledgements">
                     <p>
                         We would like to thank professor <a href="http://www.vandenbesselaar.net/">Peter van den Besselaar</a> from the faculty of Social Sciences and our colleagues from the <a href="http://krr.cs.vu.nl">KRR</a> research group at VU University Amsterdam for their helpful comments during the development of the <a href="http://ld-r.org">LD-Reactor</a> framework. This work was supported by a grant from the European Union's 7th Framework Programme provided for the project <a href="http://risis.eu">RISIS</a> (GA no. 313082).
                     </p>
@@ -821,14 +823,14 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="AuerLOD2">1</a>]
                     </td>
                     <td class="bibtexitem">
-                    S&ouml;ren Auer, Jens Lehmann, Axel-Cyrille Ngonga&nbsp;Ngomo, and Amrapali Zaveri.
+                    Sören Auer, Jens Lehmann, Axel-Cyrille Ngonga Ngomo, and Amrapali Zaveri.
                      Introduction to linked data and its lifecycle on the web.
                      In <em>Proceedings of the 9th International Conference on Reasoning
                       Web: Semantic Technologies for Intelligent Data Access</em>, RW'13, pages 1--90,
                       Berlin, Heidelberg, 2013. Springer-Verlag.
-                    [&nbsp;<a href="refs_bib.html#AuerLOD2">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1007/978-3-642-39784-4_1">DOI</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1007/978-3-642-39784-4_1">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#AuerLOD2">bib</a> |
+                    <a href="http://dx.doi.org/10.1007/978-3-642-39784-4_1">DOI</a> |
+                    <a href="http://dx.doi.org/10.1007/978-3-642-39784-4_1">http</a> ]
 
                     </td>
                     </tr>
@@ -839,15 +841,15 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="Benson2014">2</a>]
                     </td>
                     <td class="bibtexitem">
-                    Edward Benson and David&nbsp;R. Karger.
+                    Edward Benson and David R. Karger.
                      End-users publishing structured information on the web: An
                       observational study of what, why, and how.
                      In <em>Proceedings of the 32Nd Annual ACM Conference on Human
                       Factors in Computing Systems</em>, CHI '14, pages 1265--1274, New York, NY, USA,
                       2014. ACM.
-                    [&nbsp;<a href="refs_bib.html#Benson2014">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1145/2556288.2557036">DOI</a>&nbsp;|
-                    <a href="http://doi.acm.org/10.1145/2556288.2557036">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#Benson2014">bib</a> |
+                    <a href="http://dx.doi.org/10.1145/2556288.2557036">DOI</a> |
+                    <a href="http://doi.acm.org/10.1145/2556288.2557036">http</a> ]
 
                     </td>
                     </tr>
@@ -861,8 +863,8 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     Máire Casey and Claus Pahl.
                      Web components and the semantic web.
                      <em>Electr. Notes Theor. Comput. Sci.</em>, 82(5):156--163, 2003.
-                    [&nbsp;<a href="refs_bib.html#pahl2011">bib</a>&nbsp;|
-                    <a href="http://dblp.uni-trier.de/db/journals/entcs/entcs82.html#CaseyP03">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#pahl2011">bib</a> |
+                    <a href="http://dblp.uni-trier.de/db/journals/entcs/entcs82.html#CaseyP03">http</a> ]
 
                     </td>
                     </tr>
@@ -873,16 +875,16 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="swFramework2008">4</a>]
                     </td>
                     <td class="bibtexitem">
-                    Ra&uacute;l&nbsp;G. Castro, Asunci&oacute;n&nbsp;G. P&eacute;rez, and Mu&ntilde;oz-Garc&iacute;a
-                      &Oacute;scar.
+                    Raúl G. Castro, Asunción G. Pérez, and Muñoz-García
+                      Óscar.
                      The Semantic Web Framework: A Component-Based Framework for the
                       Development of Semantic Web Applications.
                      In <em>DEXA '08: Proceedings of the 2008 19th International
                       Conference on Database and Expert Systems Application</em>, pages 185--189,
                       Washington, DC, USA, 2008. IEEE Computer Society.
-                    [&nbsp;<a href="refs_bib.html#swFramework2008">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1109/dexa.2008.34">DOI</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1109/dexa.2008.34">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#swFramework2008">bib</a> |
+                    <a href="http://dx.doi.org/10.1109/dexa.2008.34">DOI</a> |
+                    <a href="http://dx.doi.org/10.1109/dexa.2008.34">http</a> ]
 
                     </td>
                     </tr>
@@ -896,7 +898,7 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     Dominic Cooney.
                      Introduction to web components, 2014.
                      <a href="http://www.w3.org/TR/components-intro/">http://www.w3.org/TR/components-intro/</a>.
-                    [&nbsp;<a href="refs_bib.html#webcomponentsW3C">bib</a>&nbsp;]
+                    [ <a href="refs_bib.html#webcomponentsW3C">bib</a> ]
 
                     </td>
                     </tr>
@@ -908,11 +910,11 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     </td>
                     <td class="bibtexitem">
                     Philipp Frischmuth, Michael Martin, Sebastian Tramp, Thomas Riechert, and
-                      S&ouml;ren Auer.
+                      Sören Auer.
                      OntoWiki---An Authoring, Publication and Visualization Interface for
                       the Data Web.
                      <em>Semantic Web Journal</em>, 2014.
-                    [&nbsp;<a href="refs_bib.html#ontowiki-swj">bib</a>&nbsp;]
+                    [ <a href="refs_bib.html#ontowiki-swj">bib</a> ]
 
                     </td>
                     </tr>
@@ -923,11 +925,11 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="HartigKF08">7</a>]
                     </td>
                     <td class="bibtexitem">
-                    Olaf Hartig, Martin Kost, and Johann&nbsp;Christoph Freytag.
+                    Olaf Hartig, Martin Kost, and Johann Christoph Freytag.
                      Designing component-based semantic web applications with DESWAP.
                      In Bizer and Joshi [<a href="#DBLP:conf/semweb/2008p">28</a>].
-                    [&nbsp;<a href="refs_bib.html#HartigKF08">bib</a>&nbsp;|
-                    <a href="http://ceur-ws.org/Vol-401/iswc2008pd_submission_21.pdf">.pdf</a>&nbsp;]
+                    [ <a href="refs_bib.html#HartigKF08">bib</a> |
+                    <a href="http://ceur-ws.org/Vol-401/iswc2008pd_submission_21.pdf">.pdf</a> ]
 
                     </td>
                     </tr>
@@ -943,7 +945,7 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                       challenges.
                      In <em>5th International Workshop on Semantic Web-Enabled Software
                       Engineering</em>, 2009.
-                    [&nbsp;<a href="refs_bib.html#SWASurvey09">bib</a>&nbsp;]
+                    [ <a href="refs_bib.html#SWASurvey09">bib</a> ]
 
                     </td>
                     </tr>
@@ -954,13 +956,13 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="adaptiveSW2011">9</a>]
                     </td>
                     <td class="bibtexitem">
-                    Ram&oacute;n Herv&aacute;s and Jos&eacute; Bravo.
+                    Ramón Hervás and José Bravo.
                      Towards the ubiquitous visualization: Adaptive user-interfaces based
                       on the semantic web.
                      <em>Interacting with Computers</em>, 23(1):40--56, 2011.
-                    [&nbsp;<a href="refs_bib.html#adaptiveSW2011">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1016/j.intcom.2010.08.002">DOI</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1016/j.intcom.2010.08.002">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#adaptiveSW2011">bib</a> |
+                    <a href="http://dx.doi.org/10.1016/j.intcom.2010.08.002">DOI</a> |
+                    <a href="http://dx.doi.org/10.1016/j.intcom.2010.08.002">http</a> ]
 
                     </td>
                     </tr>
@@ -971,10 +973,10 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="Karger2006">10</a>]
                     </td>
                     <td class="bibtexitem">
-                    David Karger and MC&nbsp;Schraefel.
+                    David Karger and MC Schraefel.
                      The pathetic fallacy of rdf.
                      Position Paper for SWUI06, 2006.
-                    [&nbsp;<a href="refs_bib.html#Karger2006">bib</a>&nbsp;]
+                    [ <a href="refs_bib.html#Karger2006">bib</a> ]
 
                     </td>
                     </tr>
@@ -990,9 +992,9 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                       systematic literature review.
                      <em>Web Semantics: Science, Services and Agents on the World Wide
                       Web</em>, 22(0):1 -- 18, 2013.
-                    [&nbsp;<a href="refs_bib.html#SCAJ-Khalili-2013">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1016/j.websem.2013.08.004">DOI</a>&nbsp;|
-                    <a href="http://www.sciencedirect.com/science/article/pii/S1570826813000498">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#SCAJ-Khalili-2013">bib</a> |
+                    <a href="http://dx.doi.org/10.1016/j.websem.2013.08.004">DOI</a> |
+                    <a href="http://www.sciencedirect.com/science/article/pii/S1570826813000498">http</a> ]
 
                     </td>
                     </tr>
@@ -1007,8 +1009,8 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                      Wysiwym -- integrated visualization, exploration and authoring of
                       semantically enriched un-structured content.
                      <em>Semantic Web Journal</em>, 2014.
-                    [&nbsp;<a href="refs_bib.html#WYSIWYM2014">bib</a>&nbsp;|
-                    <a href="http://www.semantic-web-journal.net/content/wysiwym-integrated-visualization-exploration-and-authoring-semantically-enriched-un-0">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#WYSIWYM2014">bib</a> |
+                    <a href="http://www.semantic-web-journal.net/content/wysiwym-integrated-visualization-exploration-and-authoring-semantically-enriched-un-0">http</a> ]
 
                     </td>
                     </tr>
@@ -1022,7 +1024,7 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     James Lewis and Martin Fowler.
                      Microservices, 2014.
                      <a href="http://martinfowler.com/articles/microservices.html">http://martinfowler.com/articles/microservices.html</a>.
-                    [&nbsp;<a href="refs_bib.html#microservices">bib</a>&nbsp;]
+                    [ <a href="refs_bib.html#microservices">bib</a> ]
 
                     </td>
                     </tr>
@@ -1037,7 +1039,7 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                      Coding Together at Scale: GitHub as a Collaborative Social Network.
                      In <em>Proceedings of the 8th AAAI International Conference on
                       Weblogs and Social Media (ICWSM'14)</em>, Ann Arbor, Michigan, USA, June 2014.
-                    [&nbsp;<a href="refs_bib.html#Lima14">bib</a>&nbsp;]
+                    [ <a href="refs_bib.html#Lima14">bib</a> ]
 
                     </td>
                     </tr>
@@ -1050,9 +1052,9 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     <td class="bibtexitem">
                     Michael Luggen, Adrian Gschwend, Anrig Bernhard, and Philippe Cudre-Mauroux.
                      Uduvudu: a graph-aware and adaptive ui engine for linked data.
-                     In Bizer et&nbsp;al. [<a href="#LDOW2015">26</a>].
-                    [&nbsp;<a href="refs_bib.html#Uduvudu2015">bib</a>&nbsp;|
-                    <a href="http://ceur-ws.org/Vol-1409/#paper-07">http</a>&nbsp;]
+                     In Bizer et al. [<a href="#LDOW2015">26</a>].
+                    [ <a href="refs_bib.html#Uduvudu2015">bib</a> |
+                    <a href="http://ceur-ws.org/Vol-1409/#paper-07">http</a> ]
 
                     </td>
                     </tr>
@@ -1067,9 +1069,9 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                      Ld viewer - linked data presentation framework.
                      In <em>Proceedings of the 10th International Conference on Semantic
                       Systems</em>, SEM '14, pages 124--131, New York, NY, USA, 2014. ACM.
-                    [&nbsp;<a href="refs_bib.html#Lukovnikov2014">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1145/2660517.2660539">DOI</a>&nbsp;|
-                    <a href="http://doi.acm.org/10.1145/2660517.2660539">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#Lukovnikov2014">bib</a> |
+                    <a href="http://dx.doi.org/10.1145/2660517.2660539">DOI</a> |
+                    <a href="http://doi.acm.org/10.1145/2660517.2660539">http</a> ]
 
                     </td>
                     </tr>
@@ -1080,10 +1082,10 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="Norman2013">17</a>]
                     </td>
                     <td class="bibtexitem">
-                    Donald&nbsp;A. Norman.
+                    Donald A. Norman.
                      <em>The Design of Everyday Things: Revised and Expanded Edition</em>.
                      Basic Books, Inc., New York, NY, USA, 2013.
-                    [&nbsp;<a href="refs_bib.html#Norman2013">bib</a>&nbsp;]
+                    [ <a href="refs_bib.html#Norman2013">bib</a> ]
 
                     </td>
                     </tr>
@@ -1100,9 +1102,9 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                       Palanque, and Marco Winckler, editors, <em>Human-Computer Interaction
                       INTERACT 2015</em>, volume 9298 of <em>Lecture Notes in Computer Science</em>, pages
                       149--166. Springer International Publishing, 2015.
-                    [&nbsp;<a href="refs_bib.html#Abascal2015">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1007/978-3-319-22698-9_11">DOI</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1007/978-3-319-22698-9_11">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#Abascal2015">bib</a> |
+                    <a href="http://dx.doi.org/10.1007/978-3-319-22698-9_11">DOI</a> |
+                    <a href="http://dx.doi.org/10.1007/978-3-319-22698-9_11">http</a> ]
 
                     </td>
                     </tr>
@@ -1113,14 +1115,14 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="BalloonSchlegelWSGK14">19</a>]
                     </td>
                     <td class="bibtexitem">
-                    Kai Schlegel, Thomas Wei&szlig;gerber, Florian Stegmaier, Michael Granitzer, and
+                    Kai Schlegel, Thomas Weißgerber, Florian Stegmaier, Michael Granitzer, and
                       Harald Kosch.
                      Balloon synopsis: A jquery plugin to easily integrate the semantic
                       web in a website.
                      In Verborgh and Mannens [<a href="#DBLP:conf/semweb/2014dev">27</a>], pages
                       19--24.
-                    [&nbsp;<a href="refs_bib.html#BalloonSchlegelWSGK14">bib</a>&nbsp;|
-                    <a href="http://ceur-ws.org/Vol-1268/paper4.pdf">.pdf</a>&nbsp;]
+                    [ <a href="refs_bib.html#BalloonSchlegelWSGK14">bib</a> |
+                    <a href="http://ceur-ws.org/Vol-1268/paper4.pdf">.pdf</a> ]
 
                     </td>
                     </tr>
@@ -1131,13 +1133,12 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="Sgvizler">20</a>]
                     </td>
                     <td class="bibtexitem">
-                    Martin&nbsp;G. Skjæveland.
+                    Martin G. Skjæveland.
                      Sgvizler: A javascript wrapper for easy visualization of sparql
                       result sets.
                      In <em>9th Extended Semantic Web Conference (ESWC2012)</em>, May 2012.
-                    [&nbsp;<a href="refs_bib.html#Sgvizler">bib</a>&nbsp;|
-                    <a href="http://data.semanticweb.org/conference/eswc/2012/paper/demonstation/303">http</a>&nbsp;]
-                    <p>
+                    [ <a href="refs_bib.html#Sgvizler">bib</a> |
+                    <a href="http://data.semanticweb.org/conference/eswc/2012/paper/demonstation/303">http</a> ]
                     </td>
                     </tr>
 
@@ -1147,14 +1148,14 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="StegemannZ14">21</a>]
                     </td>
                     <td class="bibtexitem">
-                    Timo Stegemann and J&uuml;rgen Ziegler.
+                    Timo Stegemann and Jürgen Ziegler.
                      Semwidgjs: A semantic widget library for the rapid development of
                       user interfaces for linked open data.
-                     In <em>44. Jahrestagung der Gesellschaft f&uuml;r Informatik,
-                      Informatik 2014, Big Data - Komplexit&auml;t meistern, 22.-26. September
+                     In <em>44. Jahrestagung der Gesellschaft für Informatik,
+                      Informatik 2014, Big Data - Komplexität meistern, 22.-26. September
                       2014 in Stuttgart, Deutschland</em>, pages 479--490, 2014.
-                    [&nbsp;<a href="refs_bib.html#StegemannZ14">bib</a>&nbsp;|
-                    <a href="http://subs.emis.de/LNI/Proceedings/Proceedings232/article93.html">.html</a>&nbsp;]
+                    [ <a href="refs_bib.html#StegemannZ14">bib</a> |
+                    <a href="http://subs.emis.de/LNI/Proceedings/Proceedings232/article93.html">.html</a> ]
 
                     </td>
                     </tr>
@@ -1171,9 +1172,9 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                      In <em>Proceedings of the 22Nd ACM SIGSOFT International Symposium
                       on Foundations of Software Engineering</em>, FSE 2014, pages 144--154, New York,
                       NY, USA, 2014. ACM.
-                    [&nbsp;<a href="refs_bib.html#Tsay2014">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1145/2635868.2635882">DOI</a>&nbsp;|
-                    <a href="http://doi.acm.org/10.1145/2635868.2635882">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#Tsay2014">bib</a> |
+                    <a href="http://dx.doi.org/10.1145/2635868.2635882">DOI</a> |
+                    <a href="http://doi.acm.org/10.1145/2635868.2635882">http</a> ]
 
                     </td>
                     </tr>
@@ -1184,14 +1185,14 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="Vale2015">23</a>]
                     </td>
                     <td class="bibtexitem">
-                    Tassio Vale, Ivica Crnkovic, Eduardo&nbsp;Santana de&nbsp;Almeida, Paulo&nbsp;Anselmo da&nbsp;Mota
-                      Silveira&nbsp;Neto, Yguarat a&nbsp;Cerqueira&nbsp;Cavalcanti, and Silvio&nbsp;Romero
-                      de&nbsp;Lemos&nbsp;Meira.
+                    Tassio Vale, Ivica Crnkovic, Eduardo Santana de Almeida, Paulo Anselmo da Mota
+                      Silveira Neto, Yguarat a Cerqueira Cavalcanti, and Silvio Romero
+                      de Lemos Meira.
                      Twenty-eight years of component-based software engineering.
                      <em>Journal of Systems and Software</em>, 2015.
-                    [&nbsp;<a href="refs_bib.html#Vale2015">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1016/j.jss.2015.09.019">DOI</a>&nbsp;|
-                    <a href="http://www.sciencedirect.com/science/article/pii/S0164121215002095">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#Vale2015">bib</a> |
+                    <a href="http://dx.doi.org/10.1016/j.jss.2015.09.019">DOI</a> |
+                    <a href="http://www.sciencedirect.com/science/article/pii/S0164121215002095">http</a> ]
 
                     </td>
                     </tr>
@@ -1202,14 +1203,14 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     [<a name="sws2015">24</a>]
                     </td>
                     <td class="bibtexitem">
-                    Hai&nbsp;H. Wang, Nick Gibbins, Terry Payne, Alina Patelli, and Yangang Wang.
+                    Hai H. Wang, Nick Gibbins, Terry Payne, Alina Patelli, and Yangang Wang.
                      A survey of semantic web services formalisms.
                      <em>Concurrency and Computation: Practice and Experience</em>,
                       27(15):4053--4072, 2015.
                      10.1002cpe.3481.
-                    [&nbsp;<a href="refs_bib.html#sws2015">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1002/cpe.3481">DOI</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1002/cpe.3481">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#sws2015">bib</a> |
+                    <a href="http://dx.doi.org/10.1002/cpe.3481">DOI</a> |
+                    <a href="http://dx.doi.org/10.1002/cpe.3481">http</a> ]
 
                     </td>
                     </tr>
@@ -1227,9 +1228,9 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                       Wide Web</em>, WWW '15 Companion, pages 207--210, Republic and Canton of Geneva,
                       Switzerland, 2015. International World Wide Web Conferences Steering
                       Committee.
-                    [&nbsp;<a href="refs_bib.html#SmartComposition2015">bib</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1145/2740908.2742832">DOI</a>&nbsp;|
-                    <a href="http://dx.doi.org/10.1145/2740908.2742832">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#SmartComposition2015">bib</a> |
+                    <a href="http://dx.doi.org/10.1145/2740908.2742832">DOI</a> |
+                    <a href="http://dx.doi.org/10.1145/2740908.2742832">http</a> ]
 
                     </td>
                     </tr>
@@ -1243,8 +1244,8 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                     Christian Bizer, Soeren Auer, Tim Berners-Lee, and Tom Heath, editors.
                      <em>Proceedings of the Proceedings of the Workshop on Linked Data on
                       the Web (LDOW)</em>, number 1409 in CEUR Workshop Proceedings, Aachen, 2015.
-                    [&nbsp;<a href="refs_bib.html#LDOW2015">bib</a>&nbsp;|
-                    <a href="http://ceur-ws.org/Vol-1409/">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#LDOW2015">bib</a> |
+                    <a href="http://ceur-ws.org/Vol-1409/">http</a> ]
 
                     </td>
                     </tr>
@@ -1260,8 +1261,8 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                       with the 13th International Semantic Web Conference (ISWC 2014), Riva del
                       Garda, Italy, October 19, 2014</em>, volume 1268 of <em>CEUR Workshop
                       Proceedings</em>. CEUR-WS.org, 2014.
-                    [&nbsp;<a href="refs_bib.html#DBLP:conf/semweb/2014dev">bib</a>&nbsp;|
-                    <a href="http://ceur-ws.org/Vol-1268">http</a>&nbsp;]
+                    [ <a href="refs_bib.html#DBLP:conf/semweb/2014dev">bib</a> |
+                    <a href="http://ceur-ws.org/Vol-1268">http</a> ]
 
                     </td>
                     </tr>
@@ -1277,7 +1278,7 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
                       International Semantic Web Conference (ISWC2008), Karlsruhe, Germany, October
                       28, 2008</em>, volume 401 of <em>CEUR Workshop Proceedings</em>. CEUR-WS.org,
                       2008.
-                    [&nbsp;<a href="refs_bib.html#DBLP:conf/semweb/2008p">bib</a>&nbsp;]
+                    [ <a href="refs_bib.html#DBLP:conf/semweb/2008p">bib</a> ]
 
                     </td>
                     </tr>
@@ -1286,7 +1287,7 @@ In contrast to LD-Reactor, LD-Viewer  builds on top of the traditional MVC archi
             </section>
         </div>
 
-    </article>
-</body>
-
+            </article>
+        </main>
+    </body>
 </html>
